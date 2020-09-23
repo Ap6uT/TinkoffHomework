@@ -8,7 +8,7 @@
 
 import Foundation
 
-let logEnabled = true
+let logEnabled = false
 
 func printLog(_ object: Any) {
     if logEnabled {
