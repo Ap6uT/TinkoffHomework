@@ -11,8 +11,6 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var image: UIImage?
-    
     @IBOutlet weak var profilePictureView: UIView!
     @IBOutlet weak var profilePictureLabel: UILabel!
     @IBOutlet weak var profilePictureImageView: UIImageView!
@@ -31,8 +29,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         printLog("View loaded: " + #function)
         
-        profilePictureView.layer.cornerRadius = profilePictureView.bounds.width / 2
-        profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
         profilePictureImageView.isHidden = true
         
         saveButton.layer.cornerRadius = 14
@@ -47,6 +43,10 @@ class ProfileViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        profilePictureView.layer.cornerRadius = profilePictureView.bounds.width / 2
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
+        
         printLog("View moved from appearing to appeared: " + #function)
         print(saveButton.frame)
         // если размер экрана отличается от того, что был в storyboard,
@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func pickPhoto() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let actCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(actCancel)
         let actPhoto = UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
@@ -130,7 +130,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         if let theImage = image {
             show(image: theImage)
         }
