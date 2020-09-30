@@ -36,10 +36,10 @@ class ContactCell: UITableViewCell, ConfigurableView {
         
         if model.message.isEmpty {
             messageLabel.text = "No messages yet"
-            messageLabel.font = UIFont.italicSystemFont(ofSize: 14.0)
+            messageLabel.font = UIFont(name: "Arial", size: messageLabel.font.pointSize)
         } else {
             if model.hasUnreadMessage {
-                messageLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+                messageLabel.font = UIFont.boldSystemFont(ofSize: messageLabel.font.pointSize)
             }
             messageLabel.text = model.message
         }
