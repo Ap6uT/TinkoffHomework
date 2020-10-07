@@ -19,6 +19,7 @@ class ContactCell: UITableViewCell, ConfigurableView {
     
     typealias ConfigurationModel = ConversationCellModel
     
+    
     func configure(with model: ConfigurationModel) {
         profileView.layer.cornerRadius = profileView.bounds.width / 2
         
@@ -26,10 +27,12 @@ class ContactCell: UITableViewCell, ConfigurableView {
             profileLabel.text = String(model.name[model.name.startIndex])
         }
         
+        let theme = ThemeManager.currentTheme()
+        
         if model.isOnline {
-            self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.6, alpha: 1.0)
+            self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.6, alpha: 0.2)
         } else {
-            self.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.backgroundColor = theme.backgroundColor
         }
         
         nameLabel.text = model.name

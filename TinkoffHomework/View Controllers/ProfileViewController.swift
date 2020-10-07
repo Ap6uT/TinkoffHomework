@@ -31,8 +31,15 @@ class ProfileViewController: UIViewController {
         
         profilePictureImageView.isHidden = true
         
+        profilePictureView.layer.cornerRadius = profilePictureView.frame.width / 2
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.width / 2
+        
         saveButton.layer.cornerRadius = 14
         print(saveButton.frame)
+        
+        let theme = ThemeManager.currentTheme()
+        view.backgroundColor = theme.backgroundColor
+        saveButton.backgroundColor = theme.secondaryColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +51,7 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        profilePictureView.layer.cornerRadius = profilePictureView.bounds.width / 2
-        profilePictureImageView.layer.cornerRadius = profilePictureImageView.bounds.width / 2
+        
         
         printLog("View moved from appearing to appeared: " + #function)
         print(saveButton.frame)
@@ -86,6 +92,10 @@ class ProfileViewController: UIViewController {
     
     @IBAction func editProfilePicture(_ sender: Any) {
         pickPhoto()
+    }
+    
+    @IBAction func cancelEdit(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

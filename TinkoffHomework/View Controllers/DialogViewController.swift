@@ -13,6 +13,7 @@ class DialogViewController: UIViewController {
     var contact: ConversationCellModel?
     
     var messages = [(isMy: Bool, value: MessageCellModel)]()
+    var messagesData = MessagesData.shared
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -44,18 +45,7 @@ class DialogViewController: UIViewController {
     }
     
     func getData() {
-        messages = [
-            (true, MessageCellModel(text: "Hi)")),
-            (true, MessageCellModel(text: "did you like that message app?")),
-            (false, MessageCellModel(text: "Hi")),
-            (false, MessageCellModel(text: "not really")),
-            (false, MessageCellModel(text: "you can do it much better")),
-            (false, MessageCellModel(text: "look at this design")),
-            (true, MessageCellModel(text: "ok")),
-            (true, MessageCellModel(text: "i'll work on it")),
-            (false, MessageCellModel(text: "you must")),
-            (true, MessageCellModel(text: "it will be much better, you will see")),
-        ]
+        messages = messagesData.getMessages()
     }
 }
 

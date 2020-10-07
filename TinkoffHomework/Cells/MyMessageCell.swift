@@ -18,6 +18,10 @@ class MyMessageCell: UITableViewCell, ConfigurableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         myMessageView.layer.cornerRadius = 8
+        let theme = ThemeManager.currentTheme()
+        myMessageView.backgroundColor = theme.myMessageColor
+        self.backgroundColor = theme.backgroundColor
+        myMessageText.textColor = theme.myMessageTextColor
     }
     
     func configure(with model: MessageCellModel) {
