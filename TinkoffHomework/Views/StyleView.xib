@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StyleView" customModule="TinkoffHomework" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="Ehi-C5-J83" id="hMO-e7-sHU"/>
+                <outlet property="myMessageView" destination="jRy-O1-nID" id="mDJ-5M-Mq6"/>
+                <outlet property="otherMessageView" destination="tCt-wE-u4v" id="VWB-KK-ERz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ehi-C5-J83">
+            <rect key="frame" x="0.0" y="0.0" width="446" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-wE-u4v">
+                    <rect key="frame" x="16" y="16" width="178.5" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="iXd-L0-dv4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jRy-O1-nID">
+                    <rect key="frame" x="251.5" y="34" width="178.5" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="AAf-Dt-0vp"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="sLc-MC-jkx"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="sLc-MC-jkx" firstAttribute="trailing" secondItem="jRy-O1-nID" secondAttribute="trailing" constant="16" id="CEd-SY-2Qy"/>
+                <constraint firstItem="tCt-wE-u4v" firstAttribute="top" secondItem="Ehi-C5-J83" secondAttribute="top" constant="16" id="KJY-2G-Wfx"/>
+                <constraint firstItem="tCt-wE-u4v" firstAttribute="width" secondItem="Ehi-C5-J83" secondAttribute="width" multiplier="0.4" id="Lcc-U9-JYU"/>
+                <constraint firstItem="tCt-wE-u4v" firstAttribute="leading" secondItem="sLc-MC-jkx" secondAttribute="leading" constant="16" id="NyF-8s-zWV"/>
+                <constraint firstItem="jRy-O1-nID" firstAttribute="width" secondItem="Ehi-C5-J83" secondAttribute="width" multiplier="0.4" id="Rp2-YF-Mt0"/>
+                <constraint firstAttribute="bottom" secondItem="jRy-O1-nID" secondAttribute="bottom" constant="16" id="tC6-Yz-ksb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="289.85507246376812" y="311.71875"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

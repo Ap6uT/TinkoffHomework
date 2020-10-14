@@ -18,6 +18,10 @@ class OtherMessageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         otherMessageView.layer.cornerRadius = 8
+        
+        let theme = ThemeManager.currentTheme()
+        otherMessageView.backgroundColor = theme.otherMessageColor
+        self.backgroundColor = theme.backgroundColor
     }
     
     func configure(with model: MessageCellModel) {
