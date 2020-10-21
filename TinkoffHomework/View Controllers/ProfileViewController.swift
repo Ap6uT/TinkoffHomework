@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profilePictureView: UIView!
@@ -82,8 +81,6 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        
         printLog("View moved from appearing to appeared: " + #function)
         printLog(saveButton.frame)
         // если размер экрана отличается от того, что был в storyboard,
@@ -113,9 +110,7 @@ class ProfileViewController: UIViewController {
         printLog("View moved from disappearing to disappeared: " + #function)
     }
     
-    // MARK:- Actions
-    
-    
+    // MARK: - Actions
     @IBAction func cancelEdit(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -131,10 +126,3 @@ class ProfileViewController: UIViewController {
         }
     }
 }
-
-
-
-
-
-
-

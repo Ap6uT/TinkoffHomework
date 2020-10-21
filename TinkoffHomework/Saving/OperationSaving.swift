@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class OperationSaving: Operation {
     let data: Any
     let fileName: DataType

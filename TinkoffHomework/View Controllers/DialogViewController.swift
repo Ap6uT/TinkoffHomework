@@ -10,12 +10,15 @@ import UIKit
 
 class DialogViewController: UIViewController {
     
-    var contact: ConversationCellModel?
+    var channel: Channel?
     
-    var messages = [(isMy: Bool, value: MessageCellModel)]()
-    var messagesData = MessagesData.shared
-    
+    let chat = ChatAPI.shared
+        
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageBarView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     struct TableView {
         struct CellIdentifiers {
@@ -26,8 +29,14 @@ class DialogViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let contact = contact {
-            navigationItem.title = contact.name
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        if let channel = channel {
+            navigationItem.title = channel.name
+            chat.getChat(for: channel.identifier, complition: { [weak self] in
+                self?.tableView.reloadData()
+            })
         } else {
             dismiss(animated: true, completion: nil)
         }
@@ -35,17 +44,33 @@ class DialogViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        sendButton.layer.cornerRadius = 5
+        
         var cellNib = UINib(nibName: TableView.CellIdentifiers.myMessageCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.myMessageCell)
         
         cellNib = UINib(nibName: TableView.CellIdentifiers.otherMessageCell, bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: TableView.CellIdentifiers.otherMessageCell)
-        
-        getData()
     }
     
-    func getData() {
-        messages = messagesData.getMessages()
+    @objc func keyboardWillChange(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)!.cgRectValue
+            bottomConstraint.constant = view.bounds.height - endFrame.origin.y
+            UIView.animate(withDuration: 0.25) {
+                self.view.layoutIfNeeded()
+
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func sendMessage(_ sender: Any) {
+        if let message = textField.text, !message.isEmpty, let channel = channel {
+            chat.addMessage(message, forChannel: channel.identifier)
+            textField.text = ""
+        }
     }
 }
 
@@ -60,21 +85,25 @@ extension DialogViewController: UITableViewDelegate {
 extension DialogViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return chat.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messages[indexPath.row]
+        let message = chat.messages[indexPath.row]
         
-        if message.isMy {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.myMessageCell, for: indexPath) as? MyMessageCell else { return UITableViewCell() }
+        if message.senderId == chat.getUserId() {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.myMessageCell,
+                                                           for: indexPath) as? MyMessageCell
+            else { return UITableViewCell() }
             
-            cell.configure(with: message.value)
+            cell.configure(with: message)
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.otherMessageCell, for: indexPath) as? OtherMessageCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.otherMessageCell,
+                                                           for: indexPath) as? OtherMessageCell
+            else { return UITableViewCell() }
             
-            cell.configure(with: message.value)
+            cell.configure(with: message)
             return cell
         }
     }

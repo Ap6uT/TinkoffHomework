@@ -218,7 +218,7 @@ Moscow, Russia</string>
             </objects>
             <point key="canvasLocation" x="1069.5999999999999" y="-611.24437781109452"/>
         </scene>
-        <!--Tinkoff Chat-->
+        <!--Channels-->
         <scene sceneID="lPP-5c-zE4">
             <objects>
                 <viewController id="oY8-W6-t8B" customClass="ContactsViewController" customModule="TinkoffHomework" customModuleProvider="target" sceneMemberID="viewController">
@@ -230,17 +230,32 @@ Moscow, Russia</string>
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQa-kp-c9O">
+                                <rect key="frame" x="300" y="592" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="k6o-Pa-VEG"/>
+                                    <constraint firstAttribute="height" constant="50" id="nW3-fh-0vg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="createChannelWithSender:" destination="oY8-W6-t8B" eventType="touchUpInside" id="yYe-pZ-oy3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d9W-98-2sw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="d9W-98-2sw" firstAttribute="trailing" secondItem="gQa-kp-c9O" secondAttribute="trailing" constant="25" id="N3G-rO-awe"/>
+                            <constraint firstItem="d9W-98-2sw" firstAttribute="bottom" secondItem="gQa-kp-c9O" secondAttribute="bottom" constant="25" id="W6i-n9-LnT"/>
                             <constraint firstItem="dx1-Qt-t0r" firstAttribute="top" secondItem="d9W-98-2sw" secondAttribute="top" id="XQt-se-bkQ"/>
                             <constraint firstItem="d9W-98-2sw" firstAttribute="trailing" secondItem="dx1-Qt-t0r" secondAttribute="trailing" id="fYZ-vo-BQL"/>
                             <constraint firstItem="dx1-Qt-t0r" firstAttribute="leading" secondItem="d9W-98-2sw" secondAttribute="leading" id="jAf-xy-ew7"/>
                             <constraint firstItem="d9W-98-2sw" firstAttribute="bottom" secondItem="dx1-Qt-t0r" secondAttribute="bottom" id="xmc-DC-sgd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tinkoff Chat" id="po5-lT-uNl">
+                    <navigationItem key="navigationItem" title="Channels" id="po5-lT-uNl">
                         <barButtonItem key="backBarButtonItem" title=" " id="oix-wd-y3G"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Settings" id="rnx-Mc-6ie">
                             <connections>
@@ -254,6 +269,7 @@ Moscow, Russia</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createChannelButton" destination="gQa-kp-c9O" id="WM7-b2-4aJ"/>
                         <outlet property="tableView" destination="dx1-Qt-t0r" id="f8F-QE-QlW"/>
                         <segue destination="aYF-Qh-dvY" kind="show" identifier="ShowDialog" id="5Bh-EF-YSs"/>
                     </connections>
@@ -271,27 +287,68 @@ Moscow, Russia</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ANP-Xb-fLN">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNi-9s-L5t">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G52-R8-w0H">
+                                        <rect key="frame" x="10" y="15" width="300" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ny-Xz-DJl">
+                                        <rect key="frame" x="320" y="15" width="45" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="FtN-ut-5R6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="aYF-Qh-dvY" eventType="touchUpInside" id="h3s-h0-7vM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="G52-R8-w0H" firstAttribute="centerY" secondItem="nNi-9s-L5t" secondAttribute="centerY" id="8Jl-TP-ze3"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ny-Xz-DJl" secondAttribute="trailing" constant="10" id="Gh5-F6-YuC"/>
+                                    <constraint firstItem="9Ny-Xz-DJl" firstAttribute="leading" secondItem="G52-R8-w0H" secondAttribute="trailing" constant="10" id="M4h-AP-Fe8"/>
+                                    <constraint firstItem="G52-R8-w0H" firstAttribute="width" secondItem="nNi-9s-L5t" secondAttribute="width" multiplier="0.8" id="W79-Kf-IUg"/>
+                                    <constraint firstItem="9Ny-Xz-DJl" firstAttribute="centerY" secondItem="nNi-9s-L5t" secondAttribute="centerY" id="fLs-aj-iwM"/>
+                                    <constraint firstItem="G52-R8-w0H" firstAttribute="leading" secondItem="nNi-9s-L5t" secondAttribute="leading" constant="10" id="oE4-ME-hvk"/>
+                                    <constraint firstAttribute="height" constant="64" id="tW4-fA-t1h"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dVp-Ul-eJt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ANP-Xb-fLN" firstAttribute="top" secondItem="dVp-Ul-eJt" secondAttribute="top" id="OK9-91-A8i"/>
-                            <constraint firstItem="dVp-Ul-eJt" firstAttribute="trailing" secondItem="ANP-Xb-fLN" secondAttribute="trailing" id="Vrl-nb-uAL"/>
-                            <constraint firstItem="dVp-Ul-eJt" firstAttribute="bottom" secondItem="ANP-Xb-fLN" secondAttribute="bottom" id="Vws-0v-OEi"/>
-                            <constraint firstItem="ANP-Xb-fLN" firstAttribute="leading" secondItem="dVp-Ul-eJt" secondAttribute="leading" id="a9p-Wt-oR3"/>
+                            <constraint firstItem="dVp-Ul-eJt" firstAttribute="bottom" secondItem="nNi-9s-L5t" secondAttribute="bottom" id="Odm-fZ-qev"/>
+                            <constraint firstItem="ANP-Xb-fLN" firstAttribute="top" secondItem="dVp-Ul-eJt" secondAttribute="top" id="cIF-Ef-XRi"/>
+                            <constraint firstItem="ANP-Xb-fLN" firstAttribute="trailing" secondItem="dVp-Ul-eJt" secondAttribute="trailing" id="djC-f7-Yp0"/>
+                            <constraint firstItem="nNi-9s-L5t" firstAttribute="trailing" secondItem="dVp-Ul-eJt" secondAttribute="trailing" id="fKH-cj-jYX"/>
+                            <constraint firstItem="nNi-9s-L5t" firstAttribute="top" secondItem="ANP-Xb-fLN" secondAttribute="bottom" id="jri-xc-5HL"/>
+                            <constraint firstItem="ANP-Xb-fLN" firstAttribute="leading" secondItem="dVp-Ul-eJt" secondAttribute="leading" id="oz1-8P-bYf"/>
+                            <constraint firstItem="nNi-9s-L5t" firstAttribute="leading" secondItem="dVp-Ul-eJt" secondAttribute="leading" id="sY8-IB-n5N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HXa-CY-mJI"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Odm-fZ-qev" id="Mq9-kl-eNw"/>
+                        <outlet property="messageBarView" destination="nNi-9s-L5t" id="Smu-mC-Ci8"/>
+                        <outlet property="sendButton" destination="9Ny-Xz-DJl" id="ylC-2k-wPa"/>
                         <outlet property="tableView" destination="ANP-Xb-fLN" id="XCe-rN-k4R"/>
+                        <outlet property="textField" destination="G52-R8-w0H" id="a2w-Ja-PU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9z-L7-KGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="838"/>
+            <point key="canvasLocation" x="192.80000000000001" y="837.93103448275872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Glp-kF-m9o">
@@ -443,6 +500,12 @@ Moscow, Russia</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -32,7 +32,6 @@ class ThemesViewController: UIViewController {
     
     var closure: ((_: Theme) -> Void)?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,15 +97,15 @@ class ThemesViewController: UIViewController {
     
     @IBAction func tapButton(_ sender: UIButton) {
         switch sender {
-            case classicButton:
-                selectView(by: .classic)
-            case dayButton:
-                selectView(by: .day)
-            case nightButton:
-                selectView(by: .night)
-            default:
-                break
-            }
+        case classicButton:
+            selectView(by: .classic)
+        case dayButton:
+            selectView(by: .day)
+        case nightButton:
+            selectView(by: .night)
+        default:
+            break
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -118,8 +117,6 @@ class ThemesViewController: UIViewController {
         //delegate?.listDetailViewControllerDidSave(self, save: selectedTheme ?? .classic)
         closure?(selectedTheme ?? .classic)
         navigationController?.popViewController(animated: true)
-        
-        
     }
     
 }

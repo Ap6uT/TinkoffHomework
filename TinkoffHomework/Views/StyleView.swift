@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class StyleView: UIView {
 
     @IBOutlet weak var contentView: UIView!

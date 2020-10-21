@@ -16,7 +16,7 @@ class SaveLoadData {
             if fileName == .avatar {
                 if let image = data as? UIImage {
                     if let pngRepresentation = image.pngData() {
-                        do  {
+                        do {
                             try pngRepresentation.write(to: fileURL, options: .atomic)
                             return true
                         } catch let err {
