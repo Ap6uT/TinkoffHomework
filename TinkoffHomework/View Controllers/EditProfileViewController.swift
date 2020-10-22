@@ -150,8 +150,8 @@ class EditProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Error", message: "Data not saved", preferredStyle: .alert)
         let actOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(actOk)
-        _ = UIAlertAction(title: "Retry", style: .default, handler: { [self] _ in
-            save(by: savingManager)
+        _ = UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+            self?.save(by: savingManager)
         })
         alert.addAction(actOk)
         present(alert, animated: true, completion: nil)
