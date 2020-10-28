@@ -12,6 +12,8 @@ class DialogViewController: UIViewController {
     
     var channel: Channel?
     
+    var coreDataStack = CoreDataStack.shared
+    
     let chat = ChatAPI.shared
         
     @IBOutlet weak var tableView: UITableView!
@@ -36,6 +38,11 @@ class DialogViewController: UIViewController {
             navigationItem.title = channel.name
             chat.getChat(for: channel.identifier, complition: { [weak self] in
                 self?.tableView.reloadData()
+                
+                if let self = self {
+                    let chatRequest = ChatRequest(coreDataStack: self.coreDataStack)
+                    chatRequest.makeMessagesRequest(channel: channel, messages: self.chat.messages)
+                }
             })
         } else {
             dismiss(animated: true, completion: nil)
