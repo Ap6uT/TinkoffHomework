@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct ChatRequest {
     let coreDataStack: CoreDataStack
@@ -18,18 +19,27 @@ struct ChatRequest {
     func makeChannelsRequest(channels: [Channel]) {
         coreDataStack.performSave { context in
             channels.forEach { channel in
-                _ = Channel_db(channel: channel, in: context)
+                _ = ChannelDB(channel: channel, in: context)
             }
         }
     }
     
-    func makeMessagesRequest(channel: Channel, messages: [Message]) {
+    func makeMessagesRequest(channelID: String, messages: [Message]) {
         coreDataStack.performSave { context in
-            let channel_db = Channel_db(channel: channel, in: context)
-            messages.forEach { message in
-                let message_db = Message_db(message: message, in: context)
-                channel_db.addToMessages(message_db)
+            let request: NSFetchRequest<ChannelDB> = ChannelDB.fetchRequest()
+            request.fetchLimit = 1
+            request.predicate = NSPredicate(format: "identifier = %@", channelID)
+            do {
+                if let channel_db = try context.fetch(request).first {
+                    messages.forEach { message in
+                        let message_db = MessageDB(message: message, in: context)
+                        channel_db.addToMessages(message_db)
+                    }
+                }
+            } catch {
+                print(error.localizedDescription)
             }
         }
+        
     }
 }

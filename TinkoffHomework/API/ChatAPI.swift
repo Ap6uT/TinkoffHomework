@@ -60,6 +60,17 @@ class ChatAPI {
         }
     }
     
+    func removeChat(with channelId: String) {
+        reference.document(channelId).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("File deleted successfully")
+            }
+            
+        }
+    }
+    
     func getChat(for channelId: String, complition: @escaping () -> Void) {
         let reference = db.collection("channels/\(channelId)/messages")
         reference.addSnapshotListener { [weak self] snapshot, _ in
@@ -106,6 +117,15 @@ class ChatAPI {
     
     func getUserId() -> String? {
         return UIDevice.current.identifierForVendor?.uuidString
+    }
+    
+    func isChannelExist(channelId: String) -> Bool {
+        for channel in channels {
+            if channel.identifier == channelId {
+                return true
+            }
+        }
+        return false
     }
     
 }

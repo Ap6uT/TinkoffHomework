@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension Channel_db {
+extension ChannelDB {
     convenience init(channel: Channel, in context: NSManagedObjectContext) {
         self.init(context: context)
         self.identifier = channel.identifier
@@ -21,7 +21,7 @@ extension Channel_db {
     var about: String {
         let description = "\(String(describing: name))\n"
         let messages = self.messages?.allObjects
-            .compactMap { $0 as? Message_db }
+            .compactMap { $0 as? MessageDB }
             .map { "\t\t\t\($0.about)" }
             .joined(separator: "\n") ?? ""
         
@@ -29,7 +29,7 @@ extension Channel_db {
     }
 }
 
-extension Message_db {
+extension MessageDB {
     convenience init(message: Message, in context: NSManagedObjectContext) {
         self.init(context: context)
         self.content = message.content
