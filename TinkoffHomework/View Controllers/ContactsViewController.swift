@@ -25,7 +25,7 @@ class ContactsViewController: UIViewController {
         let context = coreDataStack.mainContext
 
         let fetchRequest = NSFetchRequest<ChannelDB>(entityName: "ChannelDB")
-
+        fetchRequest.fetchBatchSize = 20
         let sortDescriptor = NSSortDescriptor(key: "lastActivity", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         

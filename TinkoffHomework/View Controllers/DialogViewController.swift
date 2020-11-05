@@ -28,7 +28,7 @@ class DialogViewController: UIViewController {
         } else {
             fetchRequest.predicate = NSPredicate(format: "channel.identifier == %@", "error request")
         }
-
+        fetchRequest.fetchBatchSize = 20
         let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
 
