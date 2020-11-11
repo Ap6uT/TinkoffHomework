@@ -14,6 +14,14 @@
 		D456022E252490F4002AE0BF /* MessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456022D252490F4002AE0BF /* MessageCellModel.swift */; };
 		D456023225249345002AE0BF /* OtherMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456023025249345002AE0BF /* OtherMessageCell.swift */; };
 		D456023325249345002AE0BF /* OtherMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D456023125249345002AE0BF /* OtherMessageCell.xib */; };
+		D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3BC2537229C00BFBB70 /* UserDataModel.swift */; };
+		D458B3C0253722F100BFBB70 /* SaveLoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3BF253722F100BFBB70 /* SaveLoadData.swift */; };
+		D458B3C52537332600BFBB70 /* OperationSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3C42537332600BFBB70 /* OperationSaving.swift */; };
+		D458B3C82537336400BFBB70 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */; };
+		D458B3CB253742A900BFBB70 /* OperationLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3CA253742A900BFBB70 /* OperationLoading.swift */; };
+		D458B3CE2537605C00BFBB70 /* SavingDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3CD2537605C00BFBB70 /* SavingDataType.swift */; };
+		D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B42E52534E32800670355 /* GCDDataManager.swift */; };
+		D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B42E82534E35000670355 /* OperationDataManager.swift */; };
 		D4636237252DB4F900B02197 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4636236252DB4F900B02197 /* Theme.swift */; };
 		D463623B252DB57800B02197 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463623A252DB57800B02197 /* ThemeManager.swift */; };
 		D463623F252DF6AF00B02197 /* MessagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463623E252DF6AF00B02197 /* MessagesData.swift */; };
@@ -28,6 +36,7 @@
 		D4979C5025235C5600C8FCAD /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */; };
 		D4979C5325235E4100C8FCAD /* ConversationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */; };
 		D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C552523628C00C8FCAD /* ConfigurableView.swift */; };
+		D49A2CAF253444CA00E6E0C6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */; };
 		D4B7FED5252B11A800832202 /* StyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B7FED4252B11A800832202 /* StyleView.xib */; };
 		D4B7FED8252B1DF900832202 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FED7252B1DF900832202 /* StyleView.swift */; };
 		D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FEDA252B2D1500832202 /* ThemesViewController.swift */; };
@@ -41,6 +50,14 @@
 		D456022D252490F4002AE0BF /* MessageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellModel.swift; sourceTree = "<group>"; };
 		D456023025249345002AE0BF /* OtherMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMessageCell.swift; sourceTree = "<group>"; };
 		D456023125249345002AE0BF /* OtherMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherMessageCell.xib; sourceTree = "<group>"; };
+		D458B3BC2537229C00BFBB70 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		D458B3BF253722F100BFBB70 /* SaveLoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoadData.swift; sourceTree = "<group>"; };
+		D458B3C42537332600BFBB70 /* OperationSaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationSaving.swift; sourceTree = "<group>"; };
+		D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		D458B3CA253742A900BFBB70 /* OperationLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationLoading.swift; sourceTree = "<group>"; };
+		D458B3CD2537605C00BFBB70 /* SavingDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingDataType.swift; sourceTree = "<group>"; };
+		D45B42E52534E32800670355 /* GCDDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
+		D45B42E82534E35000670355 /* OperationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		D4636236252DB4F900B02197 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D463623A252DB57800B02197 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		D463623E252DF6AF00B02197 /* MessagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesData.swift; sourceTree = "<group>"; };
@@ -57,6 +74,7 @@
 		D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellModel.swift; sourceTree = "<group>"; };
 		D4979C552523628C00C8FCAD /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		D4B7FED4252B11A800832202 /* StyleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleView.xib; sourceTree = "<group>"; };
 		D4B7FED7252B1DF900832202 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 		D4B7FEDA252B2D1500832202 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */,
+				D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */,
 				D456021825246DDD002AE0BF /* DialogViewController.swift */,
 				D468D909250EDA3C00D3D7B8 /* ProfileViewController.swift */,
 				D4B7FEDA252B2D1500832202 /* ThemesViewController.swift */,
@@ -102,6 +121,8 @@
 			children = (
 				D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */,
 				D456022D252490F4002AE0BF /* MessageCellModel.swift */,
+				D458B3BC2537229C00BFBB70 /* UserDataModel.swift */,
+				D458B3CD2537605C00BFBB70 /* SavingDataType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,17 +192,31 @@
 			children = (
 				D468D913250EDA3D00D3D7B8 /* Info.plist */,
 				D468D905250EDA3C00D3D7B8 /* AppDelegate.swift */,
-				D463623D252DF68E00B02197 /* Data */,
-				D4636235252DB4EA00B02197 /* Themes */,
-				D4B7FED3252B10AA00832202 /* Views */,
-				D456022225247493002AE0BF /* Protocols */,
-				D45602202524747B002AE0BF /* Functions */,
 				D456021D252473CE002AE0BF /* Cells */,
+				D463623D252DF68E00B02197 /* Data */,
+				D45602202524747B002AE0BF /* Functions */,
 				D456021E25247407002AE0BF /* Models */,
+				D456022225247493002AE0BF /* Protocols */,
 				D456021F25247459002AE0BF /* Resources */,
+				D49A2CB125345E7400E6E0C6 /* Saving */,
+				D4636235252DB4EA00B02197 /* Themes */,
 				D456021C252473B2002AE0BF /* View Controllers */,
+				D4B7FED3252B10AA00832202 /* Views */,
 			);
 			path = TinkoffHomework;
+			sourceTree = "<group>";
+		};
+		D49A2CB125345E7400E6E0C6 /* Saving */ = {
+			isa = PBXGroup;
+			children = (
+				D45B42E52534E32800670355 /* GCDDataManager.swift */,
+				D45B42E82534E35000670355 /* OperationDataManager.swift */,
+				D458B3C42537332600BFBB70 /* OperationSaving.swift */,
+				D458B3CA253742A900BFBB70 /* OperationLoading.swift */,
+				D458B3BF253722F100BFBB70 /* SaveLoadData.swift */,
+				D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */,
+			);
+			path = Saving;
 			sourceTree = "<group>";
 		};
 		D4B7FED3252B10AA00832202 /* Views */ = {
@@ -270,19 +305,28 @@
 			files = (
 				D456023225249345002AE0BF /* OtherMessageCell.swift in Sources */,
 				D4662B8625234CF0008F31A1 /* ContactCell.swift in Sources */,
+				D458B3CB253742A900BFBB70 /* OperationLoading.swift in Sources */,
+				D458B3C52537332600BFBB70 /* OperationSaving.swift in Sources */,
 				D456022E252490F4002AE0BF /* MessageCellModel.swift in Sources */,
 				D468D90A250EDA3C00D3D7B8 /* ProfileViewController.swift in Sources */,
 				D4979C5325235E4100C8FCAD /* ConversationCellModel.swift in Sources */,
 				D463623F252DF6AF00B02197 /* MessagesData.swift in Sources */,
 				D456022A2524753F002AE0BF /* MyMessageCell.swift in Sources */,
 				D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */,
+				D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */,
+				D458B3C0253722F100BFBB70 /* SaveLoadData.swift in Sources */,
+				D458B3C82537336400BFBB70 /* DataManagerProtocol.swift in Sources */,
+				D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */,
+				D49A2CAF253444CA00E6E0C6 /* EditProfileViewController.swift in Sources */,
 				D468D906250EDA3C00D3D7B8 /* AppDelegate.swift in Sources */,
+				D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */,
 				D456021925246DDD002AE0BF /* DialogViewController.swift in Sources */,
 				D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */,
 				D468682D25110F4200987850 /* Log.swift in Sources */,
 				D463623B252DB57800B02197 /* ThemeManager.swift in Sources */,
 				D4B7FED8252B1DF900832202 /* StyleView.swift in Sources */,
 				D4636237252DB4F900B02197 /* Theme.swift in Sources */,
+				D458B3CE2537605C00BFBB70 /* SavingDataType.swift in Sources */,
 				D4979C5025235C5600C8FCAD /* ContactsViewController.swift in Sources */,
 				D4560224252474AF002AE0BF /* DateFormat.swift in Sources */,
 			);

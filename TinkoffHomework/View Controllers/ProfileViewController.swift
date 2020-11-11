@@ -25,6 +25,8 @@ class ProfileViewController: UIViewController {
         // view еще не загрузилось, saveButton = nil, выдаст ошибку
     }
     
+    var user = UserDataModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         printLog("View loaded: " + #function)
@@ -35,11 +37,40 @@ class ProfileViewController: UIViewController {
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.width / 2
         
         saveButton.layer.cornerRadius = 14
-        print(saveButton.frame)
+        printLog(saveButton.frame)
         
         let theme = ThemeManager.currentTheme()
         view.backgroundColor = theme.backgroundColor
         saveButton.backgroundColor = theme.secondaryColor
+        
+        loadUser()
+    }
+    
+    func show(image: UIImage?) {
+        if let image = image {
+            profilePictureImageView.image = image
+            profilePictureImageView.isHidden = false
+            profilePictureLabel.text = ""
+        } else {
+            if let name = nameLabel.text, !name.isEmpty {
+                profilePictureLabel.text = String(name[name.startIndex])
+            }
+        }
+    }
+    
+    func loadUser() {
+        let operationManager = GCDDataManager()
+        
+        operationManager.load(complition: { [weak self] user in
+            self?.user = user
+            self?.showUser(user)
+        })
+    }
+    
+    func showUser(_ user: UserDataModel) {
+        nameLabel.text = user.name ?? "Name"
+        descriptionLabel.text = user.description ?? "yes"
+        show(image: user.avatar)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +85,7 @@ class ProfileViewController: UIViewController {
         
         
         printLog("View moved from appearing to appeared: " + #function)
-        print(saveButton.frame)
+        printLog(saveButton.frame)
         // если размер экрана отличается от того, что был в storyboard,
         // то frame в данном случае будет отличаться от того,
         // который был загружен во viewDidLoad
@@ -82,75 +113,27 @@ class ProfileViewController: UIViewController {
         printLog("View moved from disappearing to disappeared: " + #function)
     }
     
-    func show(image: UIImage) {
-        profilePictureImageView.image = image
-        profilePictureImageView.isHidden = false
-        profilePictureLabel.text = ""
-    }
-    
     // MARK:- Actions
     
-    @IBAction func editProfilePicture(_ sender: Any) {
-        pickPhoto()
-    }
     
     @IBAction func cancelEdit(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowEditProfile" {
+            guard let controller = segue.destination as? EditProfileViewController else { return }
+            controller.user = user
+            controller.complition = { [weak self] in
+                self?.loadUser()
+            }
+        }
+    }
 }
 
 
-// MARK: - Image Picker Controller Delegate
 
-extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func pickPhoto() {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let actCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(actCancel)
-        let actPhoto = UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
-                   self.takePhotoWithCamera()
-               })
-        alert.addAction(actPhoto)
-        let actLibrary = UIAlertAction(title: "Choose From Library", style: .default, handler: { _ in
-                   self.choosePhotoFromLibrary()
-               })
-        alert.addAction(actLibrary)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func takePhotoWithCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .camera
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.view.tintColor = view.tintColor
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func choosePhotoFromLibrary () {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        imagePicker.view.tintColor = view.tintColor
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        if let theImage = image {
-            show(image: theImage)
-        }
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
 
 
 
