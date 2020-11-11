@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum DataType: String {
     case avatar = "avatar.png"
     case name = "name.txt"

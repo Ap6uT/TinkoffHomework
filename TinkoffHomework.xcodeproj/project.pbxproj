@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,7 +11,6 @@
 		D4560224252474AF002AE0BF /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4560223252474AF002AE0BF /* DateFormat.swift */; };
 		D456022A2524753F002AE0BF /* MyMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45602282524753F002AE0BF /* MyMessageCell.swift */; };
 		D456022B2524753F002AE0BF /* MyMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D45602292524753F002AE0BF /* MyMessageCell.xib */; };
-		D456022E252490F4002AE0BF /* MessageCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456022D252490F4002AE0BF /* MessageCellModel.swift */; };
 		D456023225249345002AE0BF /* OtherMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456023025249345002AE0BF /* OtherMessageCell.swift */; };
 		D456023325249345002AE0BF /* OtherMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D456023125249345002AE0BF /* OtherMessageCell.xib */; };
 		D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3BC2537229C00BFBB70 /* UserDataModel.swift */; };
@@ -20,11 +19,11 @@
 		D458B3C82537336400BFBB70 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */; };
 		D458B3CB253742A900BFBB70 /* OperationLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3CA253742A900BFBB70 /* OperationLoading.swift */; };
 		D458B3CE2537605C00BFBB70 /* SavingDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458B3CD2537605C00BFBB70 /* SavingDataType.swift */; };
+		D459BFB225403E470053FA06 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D459BFB125403E470053FA06 /* CurrentUser.swift */; };
 		D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B42E52534E32800670355 /* GCDDataManager.swift */; };
 		D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B42E82534E35000670355 /* OperationDataManager.swift */; };
 		D4636237252DB4F900B02197 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4636236252DB4F900B02197 /* Theme.swift */; };
 		D463623B252DB57800B02197 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463623A252DB57800B02197 /* ThemeManager.swift */; };
-		D463623F252DF6AF00B02197 /* MessagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463623E252DF6AF00B02197 /* MessagesData.swift */; };
 		D4662B8625234CF0008F31A1 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4662B8425234CF0008F31A1 /* ContactCell.swift */; };
 		D4662B8725234CF0008F31A1 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4662B8525234CF0008F31A1 /* ContactCell.xib */; };
 		D468682D25110F4200987850 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468682C25110F4200987850 /* Log.swift */; };
@@ -34,20 +33,25 @@
 		D468D90F250EDA3D00D3D7B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D468D90E250EDA3D00D3D7B8 /* Assets.xcassets */; };
 		D468D912250EDA3D00D3D7B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D468D910250EDA3D00D3D7B8 /* LaunchScreen.storyboard */; };
 		D4979C5025235C5600C8FCAD /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */; };
-		D4979C5325235E4100C8FCAD /* ConversationCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */; };
 		D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C552523628C00C8FCAD /* ConfigurableView.swift */; };
 		D49A2CAF253444CA00E6E0C6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */; };
+		D4AC709D253C74DE003F07A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4AC709C253C74DE003F07A1 /* GoogleService-Info.plist */; };
+		D4AC70C1253C787C003F07A1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C0253C787C003F07A1 /* Message.swift */; };
+		D4AC70C4253C789C003F07A1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C3253C789C003F07A1 /* Channel.swift */; };
+		D4AC70C8253C7C8A003F07A1 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C7253C7C8A003F07A1 /* ChatAPI.swift */; };
 		D4B7FED5252B11A800832202 /* StyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B7FED4252B11A800832202 /* StyleView.xib */; };
 		D4B7FED8252B1DF900832202 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FED7252B1DF900832202 /* StyleView.swift */; };
 		D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FEDA252B2D1500832202 /* ThemesViewController.swift */; };
+		F2AC4DEDEC3047DDF2115909 /* Pods_TinkoffHomework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C53F37A94A0267A8440931 /* Pods_TinkoffHomework.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03C53F37A94A0267A8440931 /* Pods_TinkoffHomework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TinkoffHomework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		513844238E811A1D6A0024AB /* Pods-TinkoffHomework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffHomework.debug.xcconfig"; path = "Target Support Files/Pods-TinkoffHomework/Pods-TinkoffHomework.debug.xcconfig"; sourceTree = "<group>"; };
 		D456021825246DDD002AE0BF /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		D4560223252474AF002AE0BF /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		D45602282524753F002AE0BF /* MyMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMessageCell.swift; sourceTree = "<group>"; };
 		D45602292524753F002AE0BF /* MyMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMessageCell.xib; sourceTree = "<group>"; };
-		D456022D252490F4002AE0BF /* MessageCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellModel.swift; sourceTree = "<group>"; };
 		D456023025249345002AE0BF /* OtherMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherMessageCell.swift; sourceTree = "<group>"; };
 		D456023125249345002AE0BF /* OtherMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherMessageCell.xib; sourceTree = "<group>"; };
 		D458B3BC2537229C00BFBB70 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
@@ -56,11 +60,11 @@
 		D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
 		D458B3CA253742A900BFBB70 /* OperationLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationLoading.swift; sourceTree = "<group>"; };
 		D458B3CD2537605C00BFBB70 /* SavingDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingDataType.swift; sourceTree = "<group>"; };
+		D459BFB125403E470053FA06 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		D45B42E52534E32800670355 /* GCDDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDDataManager.swift; sourceTree = "<group>"; };
 		D45B42E82534E35000670355 /* OperationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationDataManager.swift; sourceTree = "<group>"; };
 		D4636236252DB4F900B02197 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D463623A252DB57800B02197 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		D463623E252DF6AF00B02197 /* MessagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesData.swift; sourceTree = "<group>"; };
 		D4662B8425234CF0008F31A1 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		D4662B8525234CF0008F31A1 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		D468682C25110F4200987850 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -72,12 +76,16 @@
 		D468D911250EDA3D00D3D7B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D468D913250EDA3D00D3D7B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
-		D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCellModel.swift; sourceTree = "<group>"; };
 		D4979C552523628C00C8FCAD /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		D4AC709C253C74DE003F07A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D4AC70C0253C787C003F07A1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D4AC70C3253C789C003F07A1 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		D4AC70C7253C7C8A003F07A1 /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
 		D4B7FED4252B11A800832202 /* StyleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleView.xib; sourceTree = "<group>"; };
 		D4B7FED7252B1DF900832202 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
 		D4B7FEDA252B2D1500832202 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
+		FC3D3F5BA21875D2C235B2A1 /* Pods-TinkoffHomework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TinkoffHomework.release.xcconfig"; path = "Target Support Files/Pods-TinkoffHomework/Pods-TinkoffHomework.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +93,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2AC4DEDEC3047DDF2115909 /* Pods_TinkoffHomework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09248EDD18F149DAFD4BF602 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				513844238E811A1D6A0024AB /* Pods-TinkoffHomework.debug.xcconfig */,
+				FC3D3F5BA21875D2C235B2A1 /* Pods-TinkoffHomework.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AE7488189AB0319C1FC8EF3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03C53F37A94A0267A8440931 /* Pods_TinkoffHomework.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D456021C252473B2002AE0BF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,10 +145,10 @@
 		D456021E25247407002AE0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D4979C5225235E4100C8FCAD /* ConversationCellModel.swift */,
-				D456022D252490F4002AE0BF /* MessageCellModel.swift */,
 				D458B3BC2537229C00BFBB70 /* UserDataModel.swift */,
 				D458B3CD2537605C00BFBB70 /* SavingDataType.swift */,
+				D4AC70C0253C787C003F07A1 /* Message.swift */,
+				D4AC70C3253C789C003F07A1 /* Channel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,19 +189,13 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
-		D463623D252DF68E00B02197 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				D463623E252DF6AF00B02197 /* MessagesData.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		D468D8F9250EDA3C00D3D7B8 = {
 			isa = PBXGroup;
 			children = (
 				D468D904250EDA3C00D3D7B8 /* TinkoffHomework */,
 				D468D903250EDA3C00D3D7B8 /* Products */,
+				09248EDD18F149DAFD4BF602 /* Pods */,
+				AE7488189AB0319C1FC8EF3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,10 +210,11 @@
 		D468D904250EDA3C00D3D7B8 /* TinkoffHomework */ = {
 			isa = PBXGroup;
 			children = (
+				D4AC709C253C74DE003F07A1 /* GoogleService-Info.plist */,
 				D468D913250EDA3D00D3D7B8 /* Info.plist */,
 				D468D905250EDA3C00D3D7B8 /* AppDelegate.swift */,
+				D4AC70C6253C7C67003F07A1 /* API */,
 				D456021D252473CE002AE0BF /* Cells */,
-				D463623D252DF68E00B02197 /* Data */,
 				D45602202524747B002AE0BF /* Functions */,
 				D456021E25247407002AE0BF /* Models */,
 				D456022225247493002AE0BF /* Protocols */,
@@ -215,8 +236,17 @@
 				D458B3CA253742A900BFBB70 /* OperationLoading.swift */,
 				D458B3BF253722F100BFBB70 /* SaveLoadData.swift */,
 				D458B3C72537336400BFBB70 /* DataManagerProtocol.swift */,
+				D459BFB125403E470053FA06 /* CurrentUser.swift */,
 			);
 			path = Saving;
+			sourceTree = "<group>";
+		};
+		D4AC70C6253C7C67003F07A1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D4AC70C7253C7C8A003F07A1 /* ChatAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		D4B7FED3252B10AA00832202 /* Views */ = {
@@ -235,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D468D916250EDA3D00D3D7B8 /* Build configuration list for PBXNativeTarget "TinkoffHomework" */;
 			buildPhases = (
+				52D0C8BCD5AA8B0E82B30431 /* [CP] Check Pods Manifest.lock */,
 				D468D8FE250EDA3C00D3D7B8 /* Sources */,
 				D468D8FF250EDA3C00D3D7B8 /* Frameworks */,
 				D468D900250EDA3C00D3D7B8 /* Resources */,
+				E91C3AEC5DB25ADCD4416A84 /* [CP] Embed Pods Frameworks */,
+				D459BFAF25401E750053FA06 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4B7FED5252B11A800832202 /* StyleView.xib in Resources */,
+				D4AC709D253C74DE003F07A1 /* GoogleService-Info.plist in Resources */,
 				D456023325249345002AE0BF /* OtherMessageCell.xib in Resources */,
 				D4662B8725234CF0008F31A1 /* ContactCell.xib in Resources */,
 				D468D912250EDA3D00D3D7B8 /* LaunchScreen.storyboard in Resources */,
@@ -298,6 +332,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52D0C8BCD5AA8B0E82B30431 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TinkoffHomework-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D459BFAF25401E750053FA06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+		};
+		E91C3AEC5DB25ADCD4416A84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffHomework/Pods-TinkoffHomework-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TinkoffHomework/Pods-TinkoffHomework-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TinkoffHomework/Pods-TinkoffHomework-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D468D8FE250EDA3C00D3D7B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -307,23 +400,24 @@
 				D4662B8625234CF0008F31A1 /* ContactCell.swift in Sources */,
 				D458B3CB253742A900BFBB70 /* OperationLoading.swift in Sources */,
 				D458B3C52537332600BFBB70 /* OperationSaving.swift in Sources */,
-				D456022E252490F4002AE0BF /* MessageCellModel.swift in Sources */,
 				D468D90A250EDA3C00D3D7B8 /* ProfileViewController.swift in Sources */,
-				D4979C5325235E4100C8FCAD /* ConversationCellModel.swift in Sources */,
-				D463623F252DF6AF00B02197 /* MessagesData.swift in Sources */,
 				D456022A2524753F002AE0BF /* MyMessageCell.swift in Sources */,
 				D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */,
 				D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */,
 				D458B3C0253722F100BFBB70 /* SaveLoadData.swift in Sources */,
 				D458B3C82537336400BFBB70 /* DataManagerProtocol.swift in Sources */,
 				D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */,
+				D4AC70C8253C7C8A003F07A1 /* ChatAPI.swift in Sources */,
 				D49A2CAF253444CA00E6E0C6 /* EditProfileViewController.swift in Sources */,
 				D468D906250EDA3C00D3D7B8 /* AppDelegate.swift in Sources */,
 				D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */,
 				D456021925246DDD002AE0BF /* DialogViewController.swift in Sources */,
+				D459BFB225403E470053FA06 /* CurrentUser.swift in Sources */,
 				D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */,
 				D468682D25110F4200987850 /* Log.swift in Sources */,
 				D463623B252DB57800B02197 /* ThemeManager.swift in Sources */,
+				D4AC70C4253C789C003F07A1 /* Channel.swift in Sources */,
+				D4AC70C1253C787C003F07A1 /* Message.swift in Sources */,
 				D4B7FED8252B1DF900832202 /* StyleView.swift in Sources */,
 				D4636237252DB4F900B02197 /* Theme.swift in Sources */,
 				D458B3CE2537605C00BFBB70 /* SavingDataType.swift in Sources */,
@@ -470,6 +564,7 @@
 		};
 		D468D917250EDA3D00D3D7B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 513844238E811A1D6A0024AB /* Pods-TinkoffHomework.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,7 +575,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderGrishin.TinkoffHomework;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -489,6 +584,7 @@
 		};
 		D468D918250EDA3D00D3D7B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3D3F5BA21875D2C235B2A1 /* Pods-TinkoffHomework.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,7 +595,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.AlexanderGrishin.TinkoffHomework;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tinkoff.TinkoffChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

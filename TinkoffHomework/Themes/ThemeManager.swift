@@ -33,7 +33,5 @@ struct ThemeManager {
         
         //UIActionSheet.appearance().actionSheetStyle = theme.actionSheetStyle
         // что-то пошло не так и я не могу найти, где сменить его стиль
-        
-        
     }
 }

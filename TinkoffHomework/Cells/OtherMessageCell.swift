@@ -12,8 +12,10 @@ class OtherMessageCell: UITableViewCell {
 
     @IBOutlet weak var otherMessageView: UIView!
     @IBOutlet weak var otherMessageText: UILabel!
+    @IBOutlet weak var otherMessageDateLabel: UILabel!
+    @IBOutlet weak var otherMessageNameLabel: UILabel!
     
-    typealias ConfigurationModel = MessageCellModel
+    typealias ConfigurationModel = Message
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +26,10 @@ class OtherMessageCell: UITableViewCell {
         self.backgroundColor = theme.backgroundColor
     }
     
-    func configure(with model: MessageCellModel) {
-        otherMessageText.text = model.text
+    func configure(with model: Message) {
+        otherMessageText.text = model.content
+        otherMessageNameLabel.text = model.senderName
+        otherMessageDateLabel.text = dateFormatter(date: model.created, dateFormat: "HH:mm")
     }
     
 }

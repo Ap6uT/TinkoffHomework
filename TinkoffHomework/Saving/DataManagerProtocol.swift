@@ -8,8 +8,7 @@
 
 import Foundation
 
-
 protocol DataManagerProtocol {
-    func save(user: UserDataModel, complition: @escaping (Bool) -> ())
-    func load(complition: @escaping (UserDataModel) -> ())
+    func save(user: UserDataModel, complition: @escaping (Bool) -> Void)
+    func load(complition: @escaping (UserDataModel) -> Void)
 }

@@ -8,11 +8,9 @@
 
 import UIKit
 
-
-
 class GCDDataManager: DataManagerProtocol {
     
-    func save(user: UserDataModel, complition: @escaping (Bool) -> ()) {
+    func save(user: UserDataModel, complition: @escaping (Bool) -> Void) {
         let group = DispatchGroup()
         let queue = DispatchQueue(label: "save data", attributes: .concurrent)
         
@@ -50,7 +48,7 @@ class GCDDataManager: DataManagerProtocol {
         }
     }
     
-    func load(complition: @escaping (UserDataModel) -> ()) {
+    func load(complition: @escaping (UserDataModel) -> Void) {
         var user = UserDataModel()
         
         let group = DispatchGroup()
@@ -74,7 +72,7 @@ class GCDDataManager: DataManagerProtocol {
         
         group.enter()
         queue.async {
-            if let dataDescription = SaveLoadData.loadFile(fileName: .description), let description  = String(data: dataDescription, encoding: .utf8) {
+            if let dataDescription = SaveLoadData.loadFile(fileName: .description), let description = String(data: dataDescription, encoding: .utf8) {
                 user.description = description
             }
             group.leave()

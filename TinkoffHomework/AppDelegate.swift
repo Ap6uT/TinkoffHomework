@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import  Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let theme = ThemeManager.currentTheme()
         ThemeManager.applyTheme(theme: theme)
         
+        FirebaseApp.configure()
+        
         printLog("Application started: " + #function)
         return true
     }
-    
     
     func applicationWillResignActive(_ application: UIApplication) {
         printLog("Application moved from active to inactive: " + #function)
@@ -44,4 +46,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
-

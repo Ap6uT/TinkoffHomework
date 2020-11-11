@@ -29,14 +29,12 @@ class EditProfileViewController: UIViewController {
     let avatarFile = "avatar"
     
     var user: UserDataModel?
-    var complition: (() -> ())?
+    var complition: (() -> Void)?
     
     var isSomethingWasSaved = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         profileAvatarView.layer.cornerRadius = profileAvatarView.frame.width / 2
         profileAvatarImage.layer.cornerRadius = profileAvatarImage.frame.width / 2
@@ -48,11 +46,7 @@ class EditProfileViewController: UIViewController {
         view.backgroundColor = theme.backgroundColor
         saveByGCDButton.backgroundColor = theme.secondaryColor
         saveByOperationButton.backgroundColor = theme.secondaryColor
-        
-        
-        
         descriptionTextView.delegate = self
-        
         
         if let user = user {
             if let image = user.avatar {
@@ -63,8 +57,6 @@ class EditProfileViewController: UIViewController {
         }
         isAvatarChanged = false
         lockButtons()
-
-
     }
     
     func lockButtons() {
@@ -109,8 +101,6 @@ class EditProfileViewController: UIViewController {
         unlockButtons()
     }
     
-    
-    
     func save(by savingManagerType: SavingManager) {
         lockButtons()
 
@@ -148,7 +138,6 @@ class EditProfileViewController: UIViewController {
         unlockButtons()
     }
     
-    
     // MARK: - Alerts
     func successAlert() {
         let alert = UIAlertController(title: "Data Saved", message: nil, preferredStyle: .alert)
@@ -161,8 +150,8 @@ class EditProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Error", message: "Data not saved", preferredStyle: .alert)
         let actOk = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(actOk)
-        _ = UIAlertAction(title: "Retry", style: .default, handler: { [self] _ in
-            save(by: savingManager)
+        _ = UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+            self?.save(by: savingManager)
         })
         alert.addAction(actOk)
         present(alert, animated: true, completion: nil)
@@ -217,7 +206,7 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         if let theImage = image {
             show(image: theImage)

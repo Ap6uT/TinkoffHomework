@@ -16,9 +16,9 @@ enum Theme: Int {
     var mainColor: UIColor {
         switch self {
         case .classic, .day:
-            return UIColor(red: 100.0/255.0, green: 101.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            return UIColor(red: 100.0 / 255.0, green: 101.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            return UIColor(red: 255.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         }
     }
     
@@ -48,25 +48,24 @@ enum Theme: Int {
             return .black
         }
     }
-    
-    
+        
     var barColor: UIColor {
         switch self {
         case .classic, .day:
-            return UIColor(red: 245.0/255.0, green: 245.0/255.0, blue: 245.0/255.0, alpha: 1.0)
+            return UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 245.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+            return UIColor(red: 30.0 / 255.0, green: 30.0 / 255.0, blue: 30.0 / 255.0, alpha: 1.0)
         }
     }
     
     var myMessageColor: UIColor {
         switch self {
         case .classic:
-            return UIColor(red: 220.0/255.0, green: 247.0/255.0, blue: 197.0/255.0, alpha: 1.0)
+            return UIColor(red: 220.0 / 255.0, green: 247.0 / 255.0, blue: 197.0 / 255.0, alpha: 1.0)
         case .day:
-            return UIColor(red: 67.0/255.0, green: 137.0/255.0, blue: 249.0/255.0, alpha: 1.0)
+            return UIColor(red: 67.0 / 255.0, green: 137.0 / 255.0, blue: 249.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 92.0/255.0, green: 92.0/255.0, blue: 92.0/255.0, alpha: 1.0)
+            return UIColor(red: 92.0 / 255.0, green: 92.0 / 255.0, blue: 92.0 / 255.0, alpha: 1.0)
         }
     }
     
@@ -82,29 +81,29 @@ enum Theme: Int {
     var otherMessageColor: UIColor {
         switch self {
         case .classic:
-            return UIColor(red: 223.0/255.0, green: 223.0/255.0, blue: 223.0/255.0, alpha: 1.0)
+            return UIColor(red: 223.0 / 255.0, green: 223.0 / 255.0, blue: 223.0 / 255.0, alpha: 1.0)
         case .day:
-            return UIColor(red: 234.0/255.0, green: 235.0/255.0, blue: 237.0/255.0, alpha: 1.0)
+            return UIColor(red: 234.0 / 255.0, green: 235.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 92.0/255.0, green: 92.0/255.0, blue: 92.0/255.0, alpha: 1.0)
+            return UIColor(red: 92.0 / 255.0, green: 92.0 / 255.0, blue: 92.0 / 255.0, alpha: 1.0)
         }
     }
     
     var backgroundColor: UIColor {
         switch self {
         case .classic, .day:
-            return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+            return UIColor(red: 255.0 / 255.0, green: 255.0 / 255.0, blue: 255.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 6.0/255.0, green: 6.0/255.0, blue: 6.0/255.0, alpha: 1.0)
+            return UIColor(red: 6.0 / 255.0, green: 6.0 / 255.0, blue: 6.0 / 255.0, alpha: 1.0)
         }
     }
     
     var secondaryColor: UIColor {
         switch self {
         case .classic, .day:
-            return UIColor(red: 246.0/255.0, green: 246.0/255.0, blue: 246.0/255.0, alpha: 1.0)
+            return UIColor(red: 246.0 / 255.0, green: 246.0 / 255.0, blue: 246.0 / 255.0, alpha: 1.0)
         case .night:
-            return UIColor(red: 27.0/255.0, green: 27.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+            return UIColor(red: 27.0 / 255.0, green: 27.0 / 255.0, blue: 27.0 / 255.0, alpha: 1.0)
         }
     }
     

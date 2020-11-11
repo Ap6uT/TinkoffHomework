@@ -13,7 +13,7 @@ class MyMessageCell: UITableViewCell, ConfigurableView {
     @IBOutlet weak var myMessageView: UIView!
     @IBOutlet weak var myMessageText: UILabel!
     
-    typealias ConfigurationModel = MessageCellModel
+    typealias ConfigurationModel = Message
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class MyMessageCell: UITableViewCell, ConfigurableView {
         myMessageText.textColor = theme.myMessageTextColor
     }
     
-    func configure(with model: MessageCellModel) {
-        myMessageText.text = model.text
+    func configure(with model: Message) {
+        myMessageText.text = model.content
     }
 }

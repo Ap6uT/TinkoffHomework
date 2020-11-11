@@ -8,10 +8,8 @@
 
 import UIKit
 
-
-
 struct UserDataModel {
-    var avatar: UIImage? = nil
-    var name: String? = nil
-    var description: String? = nil
+    var avatar: UIImage?
+    var name: String?
+    var description: String?
 }
