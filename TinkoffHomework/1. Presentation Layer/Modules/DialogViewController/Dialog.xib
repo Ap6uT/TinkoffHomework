@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DialogViewController" customModule="TinkoffHomework" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomConstraint" destination="1AS-pJ-wFX" id="BEt-nG-dJM"/>
+                <outlet property="messageBarView" destination="Sh9-Sy-X5t" id="lMW-2Z-GbC"/>
+                <outlet property="sendButton" destination="EhC-aR-aMf" id="D2I-0o-bcp"/>
+                <outlet property="tableView" destination="8Rt-gf-j78" id="mgE-LZ-xPT"/>
+                <outlet property="textField" destination="2Vu-hf-z8C" id="ZL3-JZ-gCJ"/>
+                <outlet property="view" destination="k6h-5Y-a6v" id="Y5P-2s-arl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="k6h-5Y-a6v">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Rt-gf-j78">
+                    <rect key="frame" x="0.0" y="44" width="414" height="754"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh9-Sy-X5t">
+                    <rect key="frame" x="0.0" y="798" width="414" height="64"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-hf-z8C">
+                            <rect key="frame" x="10" y="15" width="331" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EhC-aR-aMf">
+                            <rect key="frame" x="351" y="15" width="53" height="34"/>
+                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="Y0f-Zs-ikI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Send">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
+                            <connections>
+                                <action selector="sendMessage:" destination="-1" eventType="touchUpInside" id="hQk-Wb-M8n"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="2Vu-hf-z8C" firstAttribute="centerY" secondItem="Sh9-Sy-X5t" secondAttribute="centerY" id="Kjs-VX-SQZ"/>
+                        <constraint firstItem="EhC-aR-aMf" firstAttribute="leading" secondItem="2Vu-hf-z8C" secondAttribute="trailing" constant="10" id="La3-bx-tjR"/>
+                        <constraint firstItem="EhC-aR-aMf" firstAttribute="centerY" secondItem="Sh9-Sy-X5t" secondAttribute="centerY" id="T1r-DT-qgu"/>
+                        <constraint firstItem="2Vu-hf-z8C" firstAttribute="leading" secondItem="Sh9-Sy-X5t" secondAttribute="leading" constant="10" id="bK9-RD-FZg"/>
+                        <constraint firstAttribute="height" constant="64" id="fnn-mb-Zrg"/>
+                        <constraint firstItem="2Vu-hf-z8C" firstAttribute="width" secondItem="Sh9-Sy-X5t" secondAttribute="width" multiplier="0.8" id="k81-iF-sqO"/>
+                        <constraint firstAttribute="trailing" secondItem="EhC-aR-aMf" secondAttribute="trailing" constant="10" id="ksX-Fp-S6C"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="k3g-Xm-vgv"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="k3g-Xm-vgv" firstAttribute="bottom" secondItem="Sh9-Sy-X5t" secondAttribute="bottom" id="1AS-pJ-wFX"/>
+                <constraint firstItem="8Rt-gf-j78" firstAttribute="trailing" secondItem="k3g-Xm-vgv" secondAttribute="trailing" id="4tG-ff-P2b"/>
+                <constraint firstItem="8Rt-gf-j78" firstAttribute="leading" secondItem="k3g-Xm-vgv" secondAttribute="leading" id="70f-zM-Zri"/>
+                <constraint firstItem="Sh9-Sy-X5t" firstAttribute="trailing" secondItem="k3g-Xm-vgv" secondAttribute="trailing" id="9D4-uu-OiR"/>
+                <constraint firstItem="8Rt-gf-j78" firstAttribute="top" secondItem="k3g-Xm-vgv" secondAttribute="top" id="Due-i1-66z"/>
+                <constraint firstItem="Sh9-Sy-X5t" firstAttribute="leading" secondItem="k3g-Xm-vgv" secondAttribute="leading" id="agW-Zo-PhX"/>
+                <constraint firstItem="Sh9-Sy-X5t" firstAttribute="top" secondItem="8Rt-gf-j78" secondAttribute="bottom" id="kPO-Yn-ulK"/>
+            </constraints>
+            <point key="canvasLocation" x="-242" y="194"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

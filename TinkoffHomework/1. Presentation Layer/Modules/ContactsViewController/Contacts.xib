@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="TinkoffHomework" customModuleProvider="target">
+            <connections>
+                <outlet property="createChannelButton" destination="qxt-vF-4Na" id="MoS-Fa-LrW"/>
+                <outlet property="tableView" destination="V72-bh-nuv" id="7a5-Ul-kfR"/>
+                <outlet property="view" destination="Jny-5a-DEJ" id="Gep-Et-OkA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Jny-5a-DEJ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxt-vF-4Na">
+                    <rect key="frame" x="339" y="787" width="50" height="50"/>
+                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="6KC-hN-fCV"/>
+                        <constraint firstAttribute="height" constant="50" id="LtI-3A-9eM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                    <state key="normal" title="+"/>
+                    <connections>
+                        <action selector="createChannelWithSender:" destination="-1" eventType="touchUpInside" id="bd9-n7-6aW"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V72-bh-nuv">
+                    <rect key="frame" x="0.0" y="39" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="8le-s4-WZ0"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="V72-bh-nuv" firstAttribute="centerY" secondItem="Jny-5a-DEJ" secondAttribute="centerY" id="30C-2g-7b1"/>
+                <constraint firstItem="V72-bh-nuv" firstAttribute="centerX" secondItem="Jny-5a-DEJ" secondAttribute="centerX" id="QqB-A2-DkT"/>
+                <constraint firstItem="8le-s4-WZ0" firstAttribute="trailing" secondItem="qxt-vF-4Na" secondAttribute="trailing" constant="25" id="YM6-1s-APU"/>
+                <constraint firstItem="V72-bh-nuv" firstAttribute="leading" secondItem="8le-s4-WZ0" secondAttribute="leading" id="bSf-ap-Jyy"/>
+                <constraint firstItem="8le-s4-WZ0" firstAttribute="bottom" secondItem="V72-bh-nuv" secondAttribute="bottom" constant="5" id="kEz-0b-7ob"/>
+                <constraint firstItem="8le-s4-WZ0" firstAttribute="bottom" secondItem="qxt-vF-4Na" secondAttribute="bottom" constant="25" id="sx2-Hy-5ZV"/>
+            </constraints>
+            <point key="canvasLocation" x="-239" y="-554"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
