@@ -63,6 +63,10 @@
 		D4AC70C1253C787C003F07A1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C0253C787C003F07A1 /* Message.swift */; };
 		D4AC70C4253C789C003F07A1 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C3253C789C003F07A1 /* Channel.swift */; };
 		D4AC70C8253C7C8A003F07A1 /* ChatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AC70C7253C7C8A003F07A1 /* ChatAPI.swift */; };
+		D4ACA41E2561374E00B45D3A /* UIImageView + Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA41D2561374E00B45D3A /* UIImageView + Download.swift */; };
+		D4ACA4232561382A00B45D3A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA4222561382A00B45D3A /* Token.swift */; };
+		D4ACA42625613EA200B45D3A /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA42525613EA200B45D3A /* Rest.swift */; };
+		D4ACA4292561402600B45D3A /* URL + AppendParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4ACA4282561402600B45D3A /* URL + AppendParameters.swift */; };
 		D4B6C4212559F3FD0013AC92 /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6C4202559F3FD0013AC92 /* ServicesAssembly.swift */; };
 		D4B7FED5252B11A800832202 /* StyleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B7FED4252B11A800832202 /* StyleView.xib */; };
 		D4B7FED8252B1DF900832202 /* StyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B7FED7252B1DF900832202 /* StyleView.swift */; };
@@ -131,6 +135,10 @@
 		D4AC70C0253C787C003F07A1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D4AC70C3253C789C003F07A1 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		D4AC70C7253C7C8A003F07A1 /* ChatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAPI.swift; sourceTree = "<group>"; };
+		D4ACA41D2561374E00B45D3A /* UIImageView + Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Download.swift"; sourceTree = "<group>"; };
+		D4ACA4222561382A00B45D3A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D4ACA42525613EA200B45D3A /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		D4ACA4282561402600B45D3A /* URL + AppendParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL + AppendParameters.swift"; sourceTree = "<group>"; };
 		D4B6C4202559F3FD0013AC92 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		D4B7FED4252B11A800832202 /* StyleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleView.xib; sourceTree = "<group>"; };
 		D4B7FED7252B1DF900832202 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 				D456021E25247407002AE0BF /* Data Models */,
 				D459DDAF2559DDA000478D19 /* Modules */,
 				D423C378255DF79D0032C7AE /* UIViewController + Navigation.swift */,
+				D4ACA41D2561374E00B45D3A /* UIImageView + Download.swift */,
 			);
 			path = "1. Presentation Layer";
 			sourceTree = "<group>";
@@ -329,6 +338,7 @@
 				D45BD306255B221D00F1AEE1 /* Assembly */,
 				D45BD304255B0D5600F1AEE1 /* ChatAPI */,
 				D45BD303255B0D1000F1AEE1 /* Core Data */,
+				D4ACA4202561380F00B45D3A /* Network */,
 				D49A2CB125345E7400E6E0C6 /* Saving */,
 			);
 			path = "3. Core Layer";
@@ -406,6 +416,16 @@
 				D45F0314255DCFA2000BE42B /* SaveLoadManager.swift */,
 			);
 			path = Saving;
+			sourceTree = "<group>";
+		};
+		D4ACA4202561380F00B45D3A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D4ACA4222561382A00B45D3A /* Token.swift */,
+				D4ACA42525613EA200B45D3A /* Rest.swift */,
+				D4ACA4282561402600B45D3A /* URL + AppendParameters.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D4B6C41D2559F2300013AC92 /* 2. Service Layer */ = {
@@ -560,7 +580,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"error: SwiftLint does not exist, download it from https://github.com/realm/SwiftLint\"\n  exit 1\nfi\n";
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		E91C3AEC5DB25ADCD4416A84 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -597,11 +617,14 @@
 				D46AEB222545B441002EA86E /* CoreDataStack.swift in Sources */,
 				D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */,
 				D44E9553255C70550038D497 /* ChannelsLoadService.swift in Sources */,
+				D4ACA42625613EA200B45D3A /* Rest.swift in Sources */,
 				D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */,
 				D423C379255DF79D0032C7AE /* UIViewController + Navigation.swift in Sources */,
 				D4839AA82551427D00206420 /* ChannelDB+CoreDataClass.swift in Sources */,
 				D45BD308255B222D00F1AEE1 /* CoreAssembly.swift in Sources */,
+				D4ACA4232561382A00B45D3A /* Token.swift in Sources */,
 				D458B3C0253722F100BFBB70 /* SaveLoadData.swift in Sources */,
+				D4ACA4292561402600B45D3A /* URL + AppendParameters.swift in Sources */,
 				D458B3C82537336400BFBB70 /* DataManager.swift in Sources */,
 				D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */,
 				D4AC70C8253C7C8A003F07A1 /* ChatAPI.swift in Sources */,
@@ -610,6 +633,7 @@
 				D468D906250EDA3C00D3D7B8 /* AppDelegate.swift in Sources */,
 				D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */,
 				D4684C9D255C191800BC5407 /* RootAssembly.swift in Sources */,
+				D4ACA41E2561374E00B45D3A /* UIImageView + Download.swift in Sources */,
 				D44E955A255C80870038D497 /* MessagesLoadService.swift in Sources */,
 				D4839AB1255146BD00206420 /* MessageDB+CoreDataProperties.swift in Sources */,
 				D456021925246DDD002AE0BF /* DialogViewController.swift in Sources */,
