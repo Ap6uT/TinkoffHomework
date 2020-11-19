@@ -70,7 +70,7 @@ class ProfileViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(cancelEdit))
 
         self.navigationItem.rightBarButtonItem = rightBarButton
-        self.navigationItem.title = "Channels"
+        self.navigationItem.title = "Profile"
     }
     
     func lockButtons() {
@@ -128,7 +128,9 @@ class ProfileViewController: UIViewController {
     
     func showUser(_ user: UserDataModel) {
         nameLabel.text = user.name ?? "Name"
+        nameTextField.text = user.name ?? "Name"
         descriptionLabel.text = user.description ?? "yes"
+        descriptionTextView.text = user.description ?? "yes"
         show(image: user.avatar)
     }
     
@@ -274,6 +276,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
                    self.choosePhotoFromLibrary()
                })
         alert.addAction(actLibrary)
+        
+        let netLibrary = UIAlertAction(title: "Choose From Internet", style: .default, handler: { _ in
+                   self.choosePhotoFromNet()
+               })
+        alert.addAction(netLibrary)
         present(alert, animated: true, completion: nil)
     }
     
@@ -295,6 +302,16 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         imagePicker.allowsEditing = true
         imagePicker.view.tintColor = view.tintColor
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func choosePhotoFromNet () {
+        let controller = presentationAssembly.galleryViewController()
+        controller.closure = { [weak self] image in
+            if let image = image {
+                self?.show(image: image)
+            }
+        }
+        present(controller, animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {

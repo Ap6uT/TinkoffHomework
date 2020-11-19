@@ -72,10 +72,10 @@ class ContactsModel: IContactsModel {
     }
     
     func isChannelExist(channelId: String) -> Bool {
-        for channel in channels {
-            if channel.identifier == channelId {
-                return true
-            }
+        for channel in channels where channel.identifier == channelId {
+            //if channel.identifier == channelId {
+            return true
+            //}
         }
         return false
     }
