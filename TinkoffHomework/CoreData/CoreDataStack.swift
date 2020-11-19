@@ -80,13 +80,15 @@ class CoreDataStack {
         return context
     }
     
-    func performSave(_ block: (NSManagedObjectContext) -> Void) {
+    func performSave(_ block: @escaping (NSManagedObjectContext) -> Void) {
         let context = saveContext()
-        context.performAndWait {
+        context.perform { [weak self] in
             block(context)
             if context.hasChanges {
                 do {
-                    try performSave(in: context)
+                    //try performSave(in: context)
+                    try context.obtainPermanentIDs(for: Array(context.insertedObjects))
+                    try self?.performSave(in: context)
                 } catch {
                     assertionFailure(error.localizedDescription)
                 }
@@ -136,9 +138,9 @@ class CoreDataStack {
                 print("****************************")
                 print("****************************")
                 print("****************************")
-                let count = try self.mainContext.count(for: Channel_db.fetchRequest())
+                let count = try self.mainContext.count(for: ChannelDB.fetchRequest())
                 print("\(count) channels")
-                let array = try self.mainContext.fetch(Channel_db.fetchRequest()) as? [Channel_db] ?? []
+                let array = try self.mainContext.fetch(ChannelDB.fetchRequest()) as? [ChannelDB] ?? []
                 array.forEach {
                     print($0.about)
                 }

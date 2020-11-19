@@ -16,9 +16,9 @@ class ContactCell: UITableViewCell, ConfigurableView {
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileLabel: UILabel!
     
-    typealias ConfigurationModel = Channel
+    typealias ConfigurationModel = ChannelDB
     
-    func configure(with model: Channel) {
+    func configure(with model: ChannelDB) {
         profileView.layer.cornerRadius = profileView.bounds.width / 2
         
         if !model.name.isEmpty {

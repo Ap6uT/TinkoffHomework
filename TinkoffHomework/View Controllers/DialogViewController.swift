@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import CoreData
 
 class DialogViewController: UIViewController {
     
-    var channel: Channel?
+    var channel: ChannelDB?
     
     var coreDataStack = CoreDataStack.shared
     
     let chat = ChatAPI.shared
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<MessageDB> = {
+      
+        let context = coreDataStack.mainContext
+
+        let fetchRequest = NSFetchRequest<MessageDB>(entityName: "MessageDB")
+        
+        if let channel = channel {
+            fetchRequest.predicate = NSPredicate(format: "channel.identifier == %@", "\(String(describing: channel.identifier))")
+        } else {
+            fetchRequest.predicate = NSPredicate(format: "channel.identifier == %@", "error request")
+        }
+        fetchRequest.fetchBatchSize = 20
+        let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+
+        let fetchedResultsController = NSFetchedResultsController<MessageDB>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+
+        return fetchedResultsController
+    }()
         
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageBarView: UIView!
@@ -35,13 +56,20 @@ class DialogViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         
         if let channel = channel {
+            fetchedResultsController.delegate = self
+            do {
+                try fetchedResultsController.performFetch()
+            } catch {
+                print(error)
+            }
+            
             navigationItem.title = channel.name
             chat.getChat(for: channel.identifier, complition: { [weak self] in
                 self?.tableView.reloadData()
                 
                 if let self = self {
                     let chatRequest = ChatRequest(coreDataStack: self.coreDataStack)
-                    chatRequest.makeMessagesRequest(channel: channel, messages: self.chat.messages)
+                    chatRequest.makeMessagesRequest(channelID: channel.identifier, messages: self.chat.messages)
                 }
             })
         } else {
@@ -92,12 +120,12 @@ extension DialogViewController: UITableViewDelegate {
 extension DialogViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chat.messages.count
+        let count = fetchedResultsController.fetchedObjects?.count ?? 0
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = chat.messages[indexPath.row]
-        
+        let message = fetchedResultsController.object(at: indexPath)
         if message.senderId == chat.getUserId() {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.myMessageCell,
                                                            for: indexPath) as? MyMessageCell
@@ -114,5 +142,43 @@ extension DialogViewController: UITableViewDataSource {
             return cell
         }
     }
+}
+
+// MARK: - NSFetchedResultsControllerDelegate
+extension DialogViewController: NSFetchedResultsControllerDelegate {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        case .move:
+            if let indexPath = indexPath, let newIndexPath = newIndexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        @unknown default:
+            fatalError("Unknown changes")
+        }
+    }
+        
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
     
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.endUpdates()
+    }
 }

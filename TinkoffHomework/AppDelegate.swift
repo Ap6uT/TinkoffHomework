@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         coreDataStack.didUpdateDataBase = { stack in
-            stack.printDatabaseStatistics()
+            //stack.printDatabaseStatistics()
         }
         
         //coreDataStack.enableObservers()

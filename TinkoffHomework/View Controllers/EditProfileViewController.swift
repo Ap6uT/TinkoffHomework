@@ -111,10 +111,10 @@ class EditProfileViewController: UIViewController {
             user.avatar = profileAvatarImage.image
         }
         if isNameChanged {
-            user.name = nameTextField.text!
+            user.name = nameTextField.text ?? "name"
         }
         if isDescriptionChanged {
-            user.description = descriptionTextView.text!
+            user.description = descriptionTextView.text ?? "description"
         }
         
         let savingManager: DataManagerProtocol

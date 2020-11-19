@@ -26,6 +26,7 @@
 		D46163EF254830AD00CF525B /* ChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46163EE254830AD00CF525B /* ChatRequest.swift */; };
 		D4636237252DB4F900B02197 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4636236252DB4F900B02197 /* Theme.swift */; };
 		D463623B252DB57800B02197 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D463623A252DB57800B02197 /* ThemeManager.swift */; };
+		D465E26225501CBC00DB30D4 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D465E26125501CBC00DB30D4 /* TableViewDataSource.swift */; };
 		D4662B8625234CF0008F31A1 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4662B8425234CF0008F31A1 /* ContactCell.swift */; };
 		D4662B8725234CF0008F31A1 /* ContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4662B8525234CF0008F31A1 /* ContactCell.xib */; };
 		D468682D25110F4200987850 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468682C25110F4200987850 /* Log.swift */; };
@@ -36,6 +37,10 @@
 		D468D912250EDA3D00D3D7B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D468D910250EDA3D00D3D7B8 /* LaunchScreen.storyboard */; };
 		D46AEB1E2545B12B002EA86E /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D46AEB1C2545B12B002EA86E /* Chat.xcdatamodeld */; };
 		D46AEB222545B441002EA86E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46AEB212545B441002EA86E /* CoreDataStack.swift */; };
+		D4839AA82551427D00206420 /* ChannelDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839AA72551427D00206420 /* ChannelDB+CoreDataClass.swift */; };
+		D4839AAB255142EB00206420 /* ChannelDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839AAA255142EB00206420 /* ChannelDB+CoreDataProperties.swift */; };
+		D4839AAE2551468A00206420 /* MessageDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839AAD2551468A00206420 /* MessageDB+CoreDataClass.swift */; };
+		D4839AB1255146BD00206420 /* MessageDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4839AB0255146BD00206420 /* MessageDB+CoreDataProperties.swift */; };
 		D4979C5025235C5600C8FCAD /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */; };
 		D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4979C552523628C00C8FCAD /* ConfigurableView.swift */; };
 		D49A2CAF253444CA00E6E0C6 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */; };
@@ -71,6 +76,7 @@
 		D46163EE254830AD00CF525B /* ChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequest.swift; sourceTree = "<group>"; };
 		D4636236252DB4F900B02197 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D463623A252DB57800B02197 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		D465E26125501CBC00DB30D4 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		D4662B8425234CF0008F31A1 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		D4662B8525234CF0008F31A1 /* ContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCell.xib; sourceTree = "<group>"; };
 		D468682C25110F4200987850 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
@@ -83,6 +89,10 @@
 		D468D913250EDA3D00D3D7B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D46AEB1D2545B12B002EA86E /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
 		D46AEB212545B441002EA86E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		D4839AA72551427D00206420 /* ChannelDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D4839AAA255142EB00206420 /* ChannelDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D4839AAD2551468A00206420 /* MessageDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D4839AB0255146BD00206420 /* MessageDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D4979C4F25235C5600C8FCAD /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		D4979C552523628C00C8FCAD /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		D49A2CAE253444CA00E6E0C6 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -153,10 +163,14 @@
 		D456021E25247407002AE0BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D458B3BC2537229C00BFBB70 /* UserDataModel.swift */,
-				D458B3CD2537605C00BFBB70 /* SavingDataType.swift */,
-				D4AC70C0253C787C003F07A1 /* Message.swift */,
+				D4839AA72551427D00206420 /* ChannelDB+CoreDataClass.swift */,
+				D4839AAA255142EB00206420 /* ChannelDB+CoreDataProperties.swift */,
 				D4AC70C3253C789C003F07A1 /* Channel.swift */,
+				D4839AAD2551468A00206420 /* MessageDB+CoreDataClass.swift */,
+				D4839AB0255146BD00206420 /* MessageDB+CoreDataProperties.swift */,
+				D4AC70C0253C787C003F07A1 /* Message.swift */,
+				D458B3CD2537605C00BFBB70 /* SavingDataType.swift */,
+				D458B3BC2537229C00BFBB70 /* UserDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,9 +235,10 @@
 				D4AC709C253C74DE003F07A1 /* GoogleService-Info.plist */,
 				D468D913250EDA3D00D3D7B8 /* Info.plist */,
 				D468D905250EDA3C00D3D7B8 /* AppDelegate.swift */,
-				D46AEB202545B424002EA86E /* CoreData */,
+				D465E26125501CBC00DB30D4 /* TableViewDataSource.swift */,
 				D4AC70C6253C7C67003F07A1 /* API */,
 				D456021D252473CE002AE0BF /* Cells */,
+				D46AEB202545B424002EA86E /* CoreData */,
 				D45602202524747B002AE0BF /* Functions */,
 				D456021E25247407002AE0BF /* Models */,
 				D456022225247493002AE0BF /* Protocols */,
@@ -418,6 +433,7 @@
 			files = (
 				D456023225249345002AE0BF /* OtherMessageCell.swift in Sources */,
 				D4662B8625234CF0008F31A1 /* ContactCell.swift in Sources */,
+				D465E26225501CBC00DB30D4 /* TableViewDataSource.swift in Sources */,
 				D458B3CB253742A900BFBB70 /* OperationLoading.swift in Sources */,
 				D458B3C52537332600BFBB70 /* OperationSaving.swift in Sources */,
 				D468D90A250EDA3C00D3D7B8 /* ProfileViewController.swift in Sources */,
@@ -425,6 +441,7 @@
 				D46AEB222545B441002EA86E /* CoreDataStack.swift in Sources */,
 				D4B7FEDB252B2D1500832202 /* ThemesViewController.swift in Sources */,
 				D45B42E62534E32800670355 /* GCDDataManager.swift in Sources */,
+				D4839AA82551427D00206420 /* ChannelDB+CoreDataClass.swift in Sources */,
 				D458B3C0253722F100BFBB70 /* SaveLoadData.swift in Sources */,
 				D458B3C82537336400BFBB70 /* DataManagerProtocol.swift in Sources */,
 				D458B3BD2537229C00BFBB70 /* UserDataModel.swift in Sources */,
@@ -433,6 +450,7 @@
 				D46AEB1E2545B12B002EA86E /* Chat.xcdatamodeld in Sources */,
 				D468D906250EDA3C00D3D7B8 /* AppDelegate.swift in Sources */,
 				D45B42E92534E35000670355 /* OperationDataManager.swift in Sources */,
+				D4839AB1255146BD00206420 /* MessageDB+CoreDataProperties.swift in Sources */,
 				D456021925246DDD002AE0BF /* DialogViewController.swift in Sources */,
 				D459BFB225403E470053FA06 /* CurrentUser.swift in Sources */,
 				D4979C562523628C00C8FCAD /* ConfigurableView.swift in Sources */,
@@ -445,6 +463,8 @@
 				D4636237252DB4F900B02197 /* Theme.swift in Sources */,
 				D458B3CE2537605C00BFBB70 /* SavingDataType.swift in Sources */,
 				D4979C5025235C5600C8FCAD /* ContactsViewController.swift in Sources */,
+				D4839AAE2551468A00206420 /* MessageDB+CoreDataClass.swift in Sources */,
+				D4839AAB255142EB00206420 /* ChannelDB+CoreDataProperties.swift in Sources */,
 				D4560224252474AF002AE0BF /* DateFormat.swift in Sources */,
 				D46163EF254830AD00CF525B /* ChatRequest.swift in Sources */,
 			);
