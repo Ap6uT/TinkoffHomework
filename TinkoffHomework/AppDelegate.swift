@@ -13,6 +13,8 @@ import  Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var coreDataStack = CoreDataStack.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ThemeManager.applyTheme(theme: theme)
         
         FirebaseApp.configure()
+        
+        coreDataStack.didUpdateDataBase = { stack in
+            stack.printDatabaseStatistics()
+        }
+        
+        //coreDataStack.enableObservers()
         
         printLog("Application started: " + #function)
         return true

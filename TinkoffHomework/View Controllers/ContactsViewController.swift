@@ -15,6 +15,8 @@ class ContactsViewController: UIViewController {
     
     var theme: Theme = .classic
     
+    var coreDataStack = CoreDataStack.shared
+    
     let chat = ChatAPI.shared
     
     override func viewDidLoad() {
@@ -30,9 +32,19 @@ class ContactsViewController: UIViewController {
         
         createChannelButton.layer.cornerRadius = 25
 
-        //chat.addChannel("About guitars")
+        //coreDataStack.didUpdateDataBase = { stack in
+        //    stack.printDatabaseStatistics()
+        //}
+        
+        coreDataStack.enableObservers()
+        
         chat.getChannels { [weak self] in
             self?.tableView.reloadData()
+            
+            if let self = self {
+                let chatRequest = ChatRequest(coreDataStack: self.coreDataStack)
+                chatRequest.makeChannelsRequest(channels: self.chat.channels)
+            }
         }
     }
 

@@ -7,4 +7,7 @@ Pods/*
 
 *.xcscmblueprint
 *.xccheckout
+*.xcworkspace
+*.xcuserdatad
+.DS_Store
 
