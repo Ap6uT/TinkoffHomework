@@ -108,6 +108,9 @@ class ProfileViewController: UIViewController {
         descriptionTextView.isHidden = true
         saveByGCDButton.isHidden = true
         saveByOperationButton.isHidden = true
+        
+        nameLabel.isHidden = false
+        descriptionLabel.isHidden = false
     }
     
     func showEditView() {
@@ -190,12 +193,12 @@ class ProfileViewController: UIViewController {
         let moveY = CABasicAnimation(keyPath: "position")
         moveY.fromValue = CGPoint(x: center.x, y: center.y + 10)
         moveY.toValue = CGPoint(x: center.x, y: center.y - 10)
-        moveY.beginTime = 0.15
+        //moveY.beginTime = 0.15
 
         let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotation.fromValue = -Double.pi / 20
         rotation.toValue = Double.pi / 20
-        moveY.beginTime = 0.15
+        rotation.beginTime = 0.15
 
         let group = CAAnimationGroup()
         group.duration = 0.3
@@ -221,8 +224,10 @@ class ProfileViewController: UIViewController {
     
     @IBAction func startEdit(_ sender: Any) {
         if isInEditingMode {
+            isInEditingMode = false
             hideEditView()
         } else {
+            isInEditingMode = true
             showEditView()
         }
     }
