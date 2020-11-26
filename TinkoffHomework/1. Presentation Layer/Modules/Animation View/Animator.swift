@@ -53,7 +53,6 @@ final class Animator: NSObject {
 
         backgroundView.frame = backgroundFrame
         backgroundView.backgroundColor = fromVC.view.backgroundColor
-        //backgroundView.layer.cornerRadius = fromPizzaVC.backgroundView.layer.cornerRadius
 
         containerView.addSubview(fromVC.view)
         containerView.addSubview(toVC.view)

@@ -28,6 +28,8 @@ class ProfileViewController: UIViewController {
     
     let avatarFile = "avatar"
     
+    var isInEditingMode = false
+    
     var user: UserDataModel?
     var complition: (() -> Void)?
     
@@ -100,6 +102,7 @@ class ProfileViewController: UIViewController {
     }
     
     func hideEditView() {
+        stopShake()
         editProfilePictureButton.isHidden = true
         nameTextField.isHidden = true
         descriptionTextView.isHidden = true
@@ -108,6 +111,7 @@ class ProfileViewController: UIViewController {
     }
     
     func showEditView() {
+        startShake()
         editProfilePictureButton.isHidden = false
         nameTextField.isHidden = false
         descriptionTextView.isHidden = false
@@ -116,7 +120,7 @@ class ProfileViewController: UIViewController {
         
         nameLabel.isHidden = true
         descriptionLabel.isHidden = true
-        saveButton.isHidden = true
+        //saveButton.isHidden = true
     }
     
     func loadUser() {
@@ -174,6 +178,38 @@ class ProfileViewController: UIViewController {
         printLog("View moved from disappearing to disappeared: " + #function)
     }
     
+    // MARK: - Animations
+    
+    func startShake() {
+        let center = saveButton.center
+        
+        let moveX = CABasicAnimation(keyPath: "position")
+        moveX.fromValue = CGPoint(x: center.x + 10, y: center.y)
+        moveX.toValue = CGPoint(x: center.x - 10, y: center.y)
+
+        let moveY = CABasicAnimation(keyPath: "position")
+        moveY.fromValue = CGPoint(x: center.x, y: center.y + 10)
+        moveY.toValue = CGPoint(x: center.x, y: center.y - 10)
+        moveY.beginTime = 0.15
+
+        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.fromValue = -Double.pi / 20
+        rotation.toValue = Double.pi / 20
+        moveY.beginTime = 0.15
+
+        let group = CAAnimationGroup()
+        group.duration = 0.3
+        group.repeatCount = .infinity
+        group.autoreverses = true
+        group.animations = [moveX, moveY, rotation]
+
+        saveButton.layer.add(group, forKey: "shake")
+    }
+
+    func stopShake() {
+        view.subviews.forEach({ $0.layer.removeAllAnimations() })
+    }
+    
     // MARK: - Actions
     @objc func cancelEdit() {
         dismiss(animated: true, completion: nil)
@@ -184,7 +220,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func startEdit(_ sender: Any) {
-        showEditView()
+        if isInEditingMode {
+            hideEditView()
+        } else {
+            showEditView()
+        }
     }
     
     @IBAction func saveByGCD(_ sender: Any) {
