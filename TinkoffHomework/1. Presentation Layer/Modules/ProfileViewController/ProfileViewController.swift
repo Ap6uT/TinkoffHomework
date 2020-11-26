@@ -64,6 +64,8 @@ class ProfileViewController: UIViewController {
         saveButton.backgroundColor = theme.secondaryColor
         
         loadUser()
+        
+        addEmitter()
     }
     
     func configureNavigationBar() {
