@@ -13,6 +13,7 @@ class ContactsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createChannelButton: UIButton!
+    @IBOutlet weak var hiddenView: UIView!
     
     var theme: Theme = .classic
     
@@ -70,6 +71,8 @@ class ContactsViewController: UIViewController {
                 self.removeDeletedChannels()
             }
         }
+        
+        hiddenView.layer.cornerRadius = hiddenView.frame.width / 2
 
         addEmitter()
     }

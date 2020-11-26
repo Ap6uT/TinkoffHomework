@@ -302,7 +302,7 @@
 		D459DDAF2559DDA000478D19 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D4679944256C201800D3DB1F /* Animation View */,
+				D4679944256C201800D3DB1F /* Animations */,
 				D456021D252473CE002AE0BF /* Cells */,
 				D459DDB42559E9E000478D19 /* ContactsViewController */,
 				D459DDB52559E9F500478D19 /* DialogViewController */,
@@ -399,13 +399,13 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		D4679944256C201800D3DB1F /* Animation View */ = {
+		D4679944256C201800D3DB1F /* Animations */ = {
 			isa = PBXGroup;
 			children = (
 				D4679945256C204400D3DB1F /* UIViewController + Emitter.swift */,
 				D4582B6B256F01DF003E6995 /* Animator.swift */,
 			);
-			path = "Animation View";
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		D468D8F9250EDA3C00D3D7B8 = {

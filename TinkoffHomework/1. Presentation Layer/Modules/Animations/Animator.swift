@@ -15,11 +15,9 @@ enum AnimationType {
 
 final class Animator: NSObject {
 
-    // MARK: - Variables
     private let animationDuration: Double
     private let animationType: AnimationType
 
-    // MARK: - Init
     init(animationDuration: Double, animationType: AnimationType) {
         self.animationDuration = animationDuration
         self.animationType = animationType
@@ -47,12 +45,13 @@ final class Animator: NSObject {
         let backgroundView = UIView()
 
         let backgroundFrame = containerView.convert(
-            fromVC.view.frame,
-            from: fromVC.view.superview
+            fromVC.hiddenView.frame,
+            from: fromVC.hiddenView.superview
         )
 
         backgroundView.frame = backgroundFrame
-        backgroundView.backgroundColor = fromVC.view.backgroundColor
+        backgroundView.backgroundColor = fromVC.hiddenView.backgroundColor
+        backgroundView.layer.cornerRadius = fromVC.hiddenView.layer.cornerRadius
 
         containerView.addSubview(fromVC.view)
         containerView.addSubview(toVC.view)
@@ -62,17 +61,20 @@ final class Animator: NSObject {
         fromVC.tableView.isHidden = true
         toVC.view.isHidden = true
         
+        let frame = backgroundView.frame
+        
         let frameAnim = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
         let animator1 = {
             UIViewPropertyAnimator(duration: firstPartDuration, dampingRatio: 1) {
-                backgroundView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                backgroundView.frame = frameAnim
             }
         }()
 
         let animator2 = {
             UIViewPropertyAnimator(duration: secondPartDuration, curve: .easeInOut) {
-                backgroundView.frame = frameAnim
+                backgroundView.frame = frame
+                backgroundView.layer.cornerRadius = 240
             }
         }()
         
