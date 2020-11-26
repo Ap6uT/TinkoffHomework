@@ -26,8 +26,8 @@ final class Animator: NSObject {
     }
     
     func dismissAnimation(transitionContext: UIViewControllerContextTransitioning,
-                              fromView: UIViewController,
-                              toView: UIViewController) {
+                          fromView: UIViewController,
+                          toView: UIViewController) {
         let containerView = transitionContext.containerView
         containerView.addSubview(toView.view)
         containerView.addSubview(fromView.view)
@@ -44,45 +44,27 @@ final class Animator: NSObject {
         guard let fromVC = fromView as? ContactsViewController else { return }
         guard let toVC = toView as? ProfileViewController else { return }
         
-        // Mirroring the objects that we will animate.
         let backgroundView = UIView()
-        let pizzaSnapshot = UIImageView()
 
-        // Storing the frame positions.
         let backgroundFrame = containerView.convert(
-            fromPizzaVC.backgroundView.frame,
-            from: fromPizzaVC.backgroundView.superview
+            fromVC.view.frame,
+            from: fromVC.view.superview
         )
 
-        let pizzaSnapshotFrame = containerView.convert(
-            fromPizzaVC.pizzaImage.frame,
-            from: fromPizzaVC.pizzaImage.superview
-        )
-
-        // Setting up new objects with original attributes from the presented view controller.
         backgroundView.frame = backgroundFrame
-        backgroundView.backgroundColor = fromPizzaVC.backgroundView.backgroundColor
-        backgroundView.layer.cornerRadius = fromPizzaVC.backgroundView.layer.cornerRadius
+        backgroundView.backgroundColor = fromVC.view.backgroundColor
+        //backgroundView.layer.cornerRadius = fromPizzaVC.backgroundView.layer.cornerRadius
 
-        pizzaSnapshot.frame = pizzaSnapshotFrame
-        pizzaSnapshot.image = fromPizzaVC.pizzaImage.image
-        pizzaSnapshot.contentMode = .scaleAspectFit
-        
-        // Adding the subviews to the container view.
-        containerView.addSubview(fromPizzaVC.view)
-        containerView.addSubview(toPizzaDetailVC.view)
+        containerView.addSubview(fromVC.view)
+        containerView.addSubview(toVC.view)
         containerView.addSubview(backgroundView)
-        containerView.addSubview(pizzaSnapshot)
 
-        // Hidding/Showing objects to not/be displayed while animating the transition.
-        fromPizzaVC.view.isHidden = false
-        fromPizzaVC.collectionView.isHidden = true
-        toPizzaDetailVC.view.isHidden = true
+        fromVC.view.isHidden = false
+        fromVC.tableView.isHidden = true
+        toVC.view.isHidden = true
         
-        // Background view final position.
         let frameAnim = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
-        // Animate the view objects using PropertyAnimator
         let animator1 = {
             UIViewPropertyAnimator(duration: firstPartDuration, dampingRatio: 1) {
                 backgroundView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
@@ -92,30 +74,22 @@ final class Animator: NSObject {
         let animator2 = {
             UIViewPropertyAnimator(duration: secondPartDuration, curve: .easeInOut) {
                 backgroundView.frame = frameAnim
-                pizzaSnapshot.transform = CGAffineTransform(rotationAngle: .pi)
-                pizzaSnapshot.frame = containerView.convert(
-                    toPizzaDetailVC.pizzaImage.frame,
-                    from: toPizzaDetailVC.pizzaImage.superview
-                )
             }
         }()
         
-        // Prepare the animations sequence
         animator1.addCompletion { _ in
             animator2.startAnimation()
         }
 
         animator2.addCompletion { _ in
-            fromPizzaVC.collectionView.isHidden = false
-            toPizzaDetailVC.view.isHidden = false
+            fromVC.tableView.isHidden = false
+            toVC.view.isHidden = false
 
             backgroundView.removeFromSuperview()
-            pizzaSnapshot.removeFromSuperview()
 
             transitionContext.completeTransition(true)
         }
 
-        // Run animations
         animator1.startAnimation()
 
     }

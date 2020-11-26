@@ -151,7 +151,7 @@ class ContactsViewController: UIViewController {
     
     @objc func showProfile() {
         let controller = presentationAssembly.profileViewController()
-        controller.transitioningDelegate = self
+        //controller.transitioningDelegate = self
         navigationController?.modalPresentationStyle = .custom
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -235,17 +235,6 @@ extension ContactsViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
-}
-
-// MARK: - UIViewControllerTransitioningDelegate
-extension ContactsViewController: UIViewControllerTransitioningDelegate {
-    func animationController(forPresented presented: UIViewController,
-                             presenting: UIViewController,
-                             source: UIViewController)
-        -> UIViewControllerAnimatedTransitioning? {
-        print("iooototoeteeotoeteotoetotoetetetetetetetet")
-        return Animator(originFrame: self.view.frame)
-      }
 }
 
 // MARK: - UINavigationControllerDelegate
