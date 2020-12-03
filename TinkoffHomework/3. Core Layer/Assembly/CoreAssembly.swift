@@ -12,10 +12,12 @@ protocol ICoreAssembly {
     var coreDataStack: ICoreDataStack { get }
     var chat: IChatAPI { get }
     var saveLoadManager: ISaveLoadManager { get }
+    var rest: IRest { get }
 }
 
 class CoreAssembly: ICoreAssembly {
     var coreDataStack = CoreDataStack.shared()
     var chat = ChatAPI.shared()
     var saveLoadManager: ISaveLoadManager = SaveLoadManager()
+    var rest: IRest = Rest.shared()
 }

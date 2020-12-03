@@ -20,6 +20,8 @@ protocol IServicesAssembly {
     var messagesLoad: IMessagesLoadService { get }
     
     var userSaveService: IUserSaveService { get }
+    
+    var networkService: INetworkService { get }
 }
 
 class ServicesAssembly: IServicesAssembly {
@@ -43,5 +45,7 @@ class ServicesAssembly: IServicesAssembly {
         userLoader: coreAssembly.saveLoadManager)
     
     lazy var userSaveService: IUserSaveService = UserSaveService(manager: coreAssembly.saveLoadManager)
+    
+    lazy var networkService: INetworkService = NetworkService(rest: coreAssembly.rest)
     
 }

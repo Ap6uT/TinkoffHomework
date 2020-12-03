@@ -14,6 +14,7 @@ protocol IPresentationAssembly {
     func profileViewController() -> ProfileViewController
     func themesViewController() -> ThemesViewController
     func dialogViewController() -> DialogViewController
+    func galleryViewController() -> GalleryViewController
 }
 
 class PresentationAssembly: IPresentationAssembly {
@@ -82,5 +83,18 @@ class PresentationAssembly: IPresentationAssembly {
     
     private func themesModel() -> IThemesModel {
         return ThemesModel(themesService: serviceAssembly.themesService)
+    }
+    
+    // MARK: - GalleryViewController
+    
+    func galleryViewController() -> GalleryViewController {
+        let model = galleryModel()
+        let galleryVC = GalleryViewController(model: model, presentationAssembly: self)
+        //model.delegate = galleryVC
+        return galleryVC
+    }
+    
+    private func galleryModel() -> IGalleryModel {
+        return GalleryModel(networkService: serviceAssembly.networkService)
     }
 }
