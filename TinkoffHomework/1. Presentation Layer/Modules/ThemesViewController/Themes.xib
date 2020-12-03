@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThemesViewController" customModule="TinkoffHomework" customModuleProvider="target">
+            <connections>
+                <outlet property="classicButton" destination="BIO-pc-c7b" id="9by-ac-L6J"/>
+                <outlet property="classicView" destination="mj7-gx-Ibi" id="wfs-hg-F5g"/>
+                <outlet property="dayButton" destination="IV2-gm-jVu" id="umo-dN-GHR"/>
+                <outlet property="dayView" destination="cU6-6d-zF5" id="UYl-nE-lAg"/>
+                <outlet property="nightButton" destination="GoX-Ad-EWE" id="TIr-jN-ScZ"/>
+                <outlet property="nightView" destination="ocu-Ao-134" id="75A-Iv-vsc"/>
+                <outlet property="view" destination="yhF-9Q-MC6" id="qOu-ki-wbr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="yhF-9Q-MC6">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mj7-gx-Ibi" customClass="StyleView" customModule="TinkoffHomework" customModuleProvider="target">
+                    <rect key="frame" x="60" y="84" width="294" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="qHa-Od-KE1"/>
+                    </constraints>
+                </view>
+                <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cU6-6d-zF5" customClass="StyleView" customModule="TinkoffHomework" customModuleProvider="target">
+                    <rect key="frame" x="60" y="257" width="294" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="iib-cU-WRB"/>
+                    </constraints>
+                </view>
+                <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocu-Ao-134" customClass="StyleView" customModule="TinkoffHomework" customModuleProvider="target">
+                    <rect key="frame" x="60" y="430" width="294" height="100"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="AVB-Wt-2cR"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIO-pc-c7b">
+                    <rect key="frame" x="169.5" y="200" width="75" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Classic">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="zST-gF-YdF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV2-gm-jVu">
+                    <rect key="frame" x="186.5" y="373" width="41" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Day">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="k6K-oa-tBP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoX-Ad-EWE">
+                    <rect key="frame" x="178.5" y="546" width="57" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Night">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapButton:" destination="-1" eventType="touchUpInside" id="vdv-fN-P3p"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="dFT-uG-euI"/>
+            <color key="backgroundColor" red="0.098039215690000001" green="0.21176470589999999" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="dFT-uG-euI" firstAttribute="trailing" secondItem="cU6-6d-zF5" secondAttribute="trailing" constant="60" id="0NN-Py-Xb7"/>
+                <constraint firstItem="BIO-pc-c7b" firstAttribute="centerX" secondItem="yhF-9Q-MC6" secondAttribute="centerX" id="2Oa-Nv-FI4"/>
+                <constraint firstItem="IV2-gm-jVu" firstAttribute="centerX" secondItem="yhF-9Q-MC6" secondAttribute="centerX" id="5cz-6E-oFR"/>
+                <constraint firstItem="BIO-pc-c7b" firstAttribute="top" secondItem="mj7-gx-Ibi" secondAttribute="bottom" constant="16" id="7Oe-Vw-vCT"/>
+                <constraint firstItem="dFT-uG-euI" firstAttribute="trailing" secondItem="mj7-gx-Ibi" secondAttribute="trailing" constant="60" id="C01-KZ-1mU"/>
+                <constraint firstItem="GoX-Ad-EWE" firstAttribute="centerX" secondItem="yhF-9Q-MC6" secondAttribute="centerX" id="Fqf-xm-QHc"/>
+                <constraint firstItem="mj7-gx-Ibi" firstAttribute="leading" secondItem="dFT-uG-euI" secondAttribute="leading" constant="60" id="LlW-Ba-dZQ"/>
+                <constraint firstItem="mj7-gx-Ibi" firstAttribute="top" secondItem="dFT-uG-euI" secondAttribute="top" constant="40" id="MvP-GG-3jc"/>
+                <constraint firstItem="ocu-Ao-134" firstAttribute="leading" secondItem="dFT-uG-euI" secondAttribute="leading" constant="60" id="OaG-Op-7ak"/>
+                <constraint firstItem="IV2-gm-jVu" firstAttribute="top" secondItem="cU6-6d-zF5" secondAttribute="bottom" constant="16" id="RBO-4y-eBt"/>
+                <constraint firstItem="cU6-6d-zF5" firstAttribute="leading" secondItem="dFT-uG-euI" secondAttribute="leading" constant="60" id="YUi-De-6zB"/>
+                <constraint firstItem="cU6-6d-zF5" firstAttribute="top" secondItem="BIO-pc-c7b" secondAttribute="bottom" constant="16" id="ivT-pD-Bwa"/>
+                <constraint firstItem="dFT-uG-euI" firstAttribute="trailing" secondItem="ocu-Ao-134" secondAttribute="trailing" constant="60" id="qLn-Cm-YmQ"/>
+                <constraint firstItem="GoX-Ad-EWE" firstAttribute="top" secondItem="ocu-Ao-134" secondAttribute="bottom" constant="16" id="xi4-1E-OPt"/>
+                <constraint firstItem="ocu-Ao-134" firstAttribute="top" secondItem="IV2-gm-jVu" secondAttribute="bottom" constant="16" id="zoy-XU-v9N"/>
+            </constraints>
+            <point key="canvasLocation" x="638" y="-1256"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

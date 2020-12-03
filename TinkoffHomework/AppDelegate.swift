@@ -14,20 +14,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var coreDataStack = CoreDataStack.shared
+    //var coreDataStack = CoreDataStack.shared
+    private let rootAssembly = RootAssembly()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let theme = ThemeManager.currentTheme()
-        ThemeManager.applyTheme(theme: theme)
+        //let theme = ThemeManager.currentTheme()
+        //ThemeManager.applyTheme(theme: theme)
         
         FirebaseApp.configure()
         
-        coreDataStack.didUpdateDataBase = { stack in
+        //coreDataStack.didUpdateDataBase = { stack in
             //stack.printDatabaseStatistics()
-        }
+        //}
         
         //coreDataStack.enableObservers()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let controller = rootAssembly.presentationAssembly.contactsViewController().embed()
+        window?.rootViewController = controller
+        window?.makeKeyAndVisible()
         
         printLog("Application started: " + #function)
         return true
