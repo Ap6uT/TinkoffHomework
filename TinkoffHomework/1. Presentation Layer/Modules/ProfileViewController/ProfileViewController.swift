@@ -30,7 +30,7 @@ class ProfileViewController: UIViewController {
     
     var isInEditingMode = false
     
-    var user: UserDataModel?
+    var user: IUserDataModel?
     var complition: (() -> Void)?
     
     var isSomethingWasSaved = false
@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController {
         })
     }
     
-    func showUser(_ user: UserDataModel) {
+    func showUser(_ user: IUserDataModel) {
         nameLabel.text = user.name ?? "Name"
         nameTextField.text = user.name ?? "Name"
         descriptionLabel.text = user.description ?? "yes"

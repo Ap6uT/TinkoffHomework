@@ -80,6 +80,8 @@ class ContactsViewController: UIViewController {
     func configureNavigationBar() {
         let leftBarButton = UIBarButtonItem(title: "Themes", style: .done, target: self, action: #selector(showThemes))
         let rightBarButton = UIBarButtonItem(title: "Edit Profile", style: .done, target: self, action: #selector(showProfile))
+        
+        rightBarButton.accessibilityIdentifier = "navRightItem"
                 
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.rightBarButtonItem = rightBarButton

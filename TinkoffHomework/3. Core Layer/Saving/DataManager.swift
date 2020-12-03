@@ -14,6 +14,6 @@ enum SavingManager {
 }
 
 protocol IDataManager {
-    func save(user: UserDataModel, complition: @escaping (Bool) -> Void)
-    func load(complition: @escaping (UserDataModel) -> Void)
+    func save(user: IUserDataModel, complition: @escaping (Bool) -> Void)
+    func load(complition: @escaping (IUserDataModel) -> Void)
 }

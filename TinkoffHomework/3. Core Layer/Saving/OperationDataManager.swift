@@ -10,7 +10,7 @@ import UIKit
 
 class OperationDataManager: IDataManager {
     
-    func save(user: UserDataModel, complition: @escaping (Bool) -> Void) {
+    func save(user: IUserDataModel, complition: @escaping (Bool) -> Void) {
         
         var imageSavingSuccess = true
         var nameSavingSuccess = true
@@ -59,7 +59,7 @@ class OperationDataManager: IDataManager {
         
     }
     
-    func load(complition: @escaping (UserDataModel) -> Void) {
+    func load(complition: @escaping (IUserDataModel) -> Void) {
         let queue = OperationQueue()
         
         var user = UserDataModel()
