@@ -4,29 +4,41 @@
   desc "Build application and send message in discord"
   lane :build_for_testing do
 	  scan(
-      clean: true
+      workspace: "TinkoffHomework.xcworkspace",
+      clean: true,
+      build_for_testing: true,
+      deployment_target_version: "12.4"
     )
 
     webhook_url = ENV['DISCORD_WEBHOOK_URL']
 
-    discord_notifier(
-    webhook_url:webhook_url,
-    title: "it's alive",
-    description: "probably)",
-  )
+    #discord_notifier(
+    #  webhook_url:webhook_url,
+    #  title: "it's alive",
+    #  description: "probably)",
+    #)
   end
 
  desc "Run all tests for app"
   lane :run_my_tests do
-    run_tests(workspace: "TinkoffHomework.xcworkspace",
+    run_tests(
+      workspace: "TinkoffHomework.xcworkspace",
+      deployment_target_version: "12.4",
+      test_without_building: true,
       device: "iPhone X",
       scheme: "TinkoffHomeworkTests")
 
-    run_tests(workspace: "TinkoffHomework.xcworkspace",
+    run_tests(
+      workspace: "TinkoffHomework.xcworkspace",
+      deployment_target_version: "12.4",
+      test_without_building: true,
       device: "iPhone X",
       scheme: "SavingTests")
 
-    run_tests(workspace: "TinkoffHomework.xcworkspace",
+    run_tests(
+      workspace: "TinkoffHomework.xcworkspace",
+      deployment_target_version: "12.4",
+      test_without_building: true,
       device: "iPhone X",
       scheme: "TinkoffHomeworkTests")
   end
