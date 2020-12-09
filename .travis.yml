@@ -1,5 +1,5 @@
 language: swift
-osx_image: xcode12.2
+osx_image: xcode11.3
 xcode_workspace: TinkoffHomework.xcworkspace
 xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone X
 before_install:
