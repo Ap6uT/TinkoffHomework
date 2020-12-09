@@ -7,6 +7,6 @@
     <testcase classname='SavingTests.SavingTests' name='testExample' time='0.002'/>
   </testsuite>
   <testsuite name='TinkoffHomeworkUITests.TinkoffHomeworkUITests' tests='1' failures='0'>
-    <testcase classname='TinkoffHomeworkUITests.TinkoffHomeworkUITests' name='testExample' time='5.551'/>
+    <testcase classname='TinkoffHomeworkUITests.TinkoffHomeworkUITests' name='testExample' time='5.760'/>
   </testsuite>
 </testsuites>

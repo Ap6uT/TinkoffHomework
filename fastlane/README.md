@@ -19,12 +19,12 @@ or alternatively using `brew install fastlane`
 ```
 fastlane build_for_testing
 ```
-Build for test
+Build application and send message in discord
 ### run_my_tests
 ```
 fastlane run_my_tests
 ```
-
+Run all tests for app
 ### build_and_test
 ```
 fastlane build_and_test

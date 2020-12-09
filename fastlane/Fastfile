@@ -1,7 +1,7 @@
 
   setup_travis
   
-  desc "Build for test"
+  desc "Build application and send message in discord"
   lane :build_for_testing do
 	  scan(
       clean: true
@@ -9,12 +9,14 @@
 
     webhook_url = ENV['DISCORD_WEBHOOK_URL']
 
-    discord(
-      message: 'it's alive',
-      webhook_url: webhook_url
-    )
+    discord_notifier(
+    webhook_url:webhook_url,
+    title: "it's alive",
+    description: "probably)",
+  )
   end
 
+ desc "Run all tests for app"
   lane :run_my_tests do
     run_tests(workspace: "TinkoffHomework.xcworkspace",
       device: "iPhone X",
@@ -30,5 +32,6 @@
   end
 
   lane :build_and_test do
-	
+	    build_for_testing
+      run_my_tests
   end
