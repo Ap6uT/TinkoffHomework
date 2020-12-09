@@ -103,6 +103,7 @@ Moscow, Russia</string>
                 </navigationBar>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ik7-RG-0w7">
                     <rect key="frame" x="56" y="382" width="302" height="38.5"/>
+                    <accessibility key="accessibilityConfiguration" identifier="nameTextField"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
@@ -112,6 +113,7 @@ Moscow, Russia</string>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Yes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gwf-Yj-4Ak">
                     <rect key="frame" x="78" y="439" width="258" height="50"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <accessibility key="accessibilityConfiguration" identifier="descriprionTextView"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="999" constant="50" id="B0Y-EF-OKi"/>
                     </constraints>

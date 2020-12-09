@@ -10,7 +10,7 @@ import UIKit
 
 class GCDDataManager: IDataManager {
     
-    func save(user: UserDataModel, complition: @escaping (Bool) -> Void) {
+    func save(user: IUserDataModel, complition: @escaping (Bool) -> Void) {
         let group = DispatchGroup()
         let queue = DispatchQueue(label: "save data", attributes: .concurrent)
         
@@ -48,7 +48,7 @@ class GCDDataManager: IDataManager {
         }
     }
     
-    func load(complition: @escaping (UserDataModel) -> Void) {
+    func load(complition: @escaping (IUserDataModel) -> Void) {
         var user = UserDataModel()
         
         let group = DispatchGroup()

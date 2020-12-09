@@ -1,0 +1,11 @@
+language: swift
+osx_image: xcode11.3
+xcode_workspace: TinkoffHomework.xcworkspace
+xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone X
+before_install:
+  - yes | gem update --system --force
+  - gem install bundler
+install:
+  - bundle install
+script:
+  - bundle exec fastlane build_for_testing

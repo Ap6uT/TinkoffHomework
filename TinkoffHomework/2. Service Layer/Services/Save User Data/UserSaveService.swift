@@ -9,7 +9,7 @@
 import Foundation
 
 protocol IUserSaveService {
-    func saveUserData(by savingManagerType: SavingManager, user: UserDataModel, complition: @escaping (Bool) -> Void)
+    func saveUserData(by savingManagerType: SavingManager, user: IUserDataModel, complition: @escaping (Bool) -> Void)
     func loadUserData() -> IUserDataModel?
 }
 
@@ -20,7 +20,7 @@ class UserSaveService: IUserSaveService {
         self.manager = manager
     }
     
-    func saveUserData(by savingManagerType: SavingManager, user: UserDataModel, complition: @escaping (Bool) -> Void) {
+    func saveUserData(by savingManagerType: SavingManager, user: IUserDataModel, complition: @escaping (Bool) -> Void) {
         let savingManager = manager.getManager(by: savingManagerType)
         savingManager.save(user: user, complition: complition)
     }
