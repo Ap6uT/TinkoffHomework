@@ -67,6 +67,8 @@ class DialogViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         }
         
+        addEmitter()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
