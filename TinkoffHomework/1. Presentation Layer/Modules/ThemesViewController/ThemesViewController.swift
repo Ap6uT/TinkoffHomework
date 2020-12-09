@@ -50,6 +50,8 @@ class ThemesViewController: UIViewController, IThemesModelDelegate {
         view.backgroundColor = selectedTheme?.backgroundColor
         
         selectView(by: selectedTheme ?? .classic)
+        
+        addEmitter()
     }
     
     func configureNavigationBar() {

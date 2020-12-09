@@ -13,10 +13,11 @@ class ContactsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createChannelButton: UIButton!
+    @IBOutlet weak var hiddenView: UIView!
     
     var theme: Theme = .classic
     
-    //let chat = ChatAPI.shared()
+    var animator: Animator?
 
     lazy var fetchedResultsController = model.getFetchedResultsController()
     
@@ -53,6 +54,8 @@ class ContactsViewController: UIViewController {
         
         fetchedResultsController.delegate = self
         
+        navigationController?.delegate = self
+        
         do {
             try fetchedResultsController.performFetch()
         } catch {
@@ -68,11 +71,17 @@ class ContactsViewController: UIViewController {
                 self.removeDeletedChannels()
             }
         }
+        
+        hiddenView.layer.cornerRadius = hiddenView.frame.width / 2
+
+        addEmitter()
     }
     
     func configureNavigationBar() {
         let leftBarButton = UIBarButtonItem(title: "Themes", style: .done, target: self, action: #selector(showThemes))
         let rightBarButton = UIBarButtonItem(title: "Edit Profile", style: .done, target: self, action: #selector(showProfile))
+        
+        rightBarButton.accessibilityIdentifier = "navRightItem"
                 
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.rightBarButtonItem = rightBarButton
@@ -147,6 +156,8 @@ class ContactsViewController: UIViewController {
     
     @objc func showProfile() {
         let controller = presentationAssembly.profileViewController()
+        //controller.transitioningDelegate = self
+        navigationController?.modalPresentationStyle = .custom
         navigationController?.pushViewController(controller, animated: true)
     }
 }
@@ -231,6 +242,22 @@ extension ContactsViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
+// MARK: - UINavigationControllerDelegate
+extension ContactsViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController,
+                              animationControllerFor operation: UINavigationController.Operation,
+                              from fromVC: UIViewController,
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        switch operation {
+        case .push:
+            return Animator(animationDuration: 1.5, animationType: .present)
+        case .pop:
+            return Animator(animationDuration: 1.5, animationType: .dismiss)
+        default:
+            return nil
+        }
+    }
+}
 /*
 // MARK: - Themes Delegate
 extension ContactsViewController: ThemesViewControllerDelegate {

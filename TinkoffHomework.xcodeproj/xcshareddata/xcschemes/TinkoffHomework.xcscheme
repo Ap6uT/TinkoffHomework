@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1210"
+   LastUpgradeVersion = "1220"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -28,6 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D4A194382573E25200A70605"
+               BuildableName = "TinkoffHomeworkTests.xctest"
+               BlueprintName = "TinkoffHomeworkTests"
+               ReferencedContainer = "container:TinkoffHomework.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D4AEEACF2576E01900B5EDA1"
+               BuildableName = "SavingTests.xctest"
+               BlueprintName = "SavingTests"
+               ReferencedContainer = "container:TinkoffHomework.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D454CFDA257840A700308900"
+               BuildableName = "TinkoffHomeworkUITests.xctest"
+               BlueprintName = "TinkoffHomeworkUITests"
+               ReferencedContainer = "container:TinkoffHomework.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

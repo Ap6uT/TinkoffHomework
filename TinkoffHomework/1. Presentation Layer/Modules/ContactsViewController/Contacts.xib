@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="TinkoffHomework" customModuleProvider="target">
             <connections>
                 <outlet property="createChannelButton" destination="qxt-vF-4Na" id="MoS-Fa-LrW"/>
+                <outlet property="hiddenView" destination="WFW-xO-SQS" id="JH4-Xv-q3g"/>
                 <outlet property="tableView" destination="V72-bh-nuv" id="7a5-Ul-kfR"/>
                 <outlet property="view" destination="Jny-5a-DEJ" id="Gep-Et-OkA"/>
             </connections>
@@ -21,6 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFW-xO-SQS">
+                    <rect key="frame" x="87" y="114" width="240" height="240"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="2UG-nM-GYa"/>
+                        <constraint firstAttribute="width" constant="240" id="Cpe-cN-uqM"/>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxt-vF-4Na">
                     <rect key="frame" x="339" y="787" width="50" height="50"/>
                     <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -43,8 +52,10 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="V72-bh-nuv" firstAttribute="centerY" secondItem="Jny-5a-DEJ" secondAttribute="centerY" id="30C-2g-7b1"/>
+                <constraint firstItem="WFW-xO-SQS" firstAttribute="centerX" secondItem="Jny-5a-DEJ" secondAttribute="centerX" id="4Pi-ZX-M3m"/>
                 <constraint firstItem="V72-bh-nuv" firstAttribute="centerX" secondItem="Jny-5a-DEJ" secondAttribute="centerX" id="QqB-A2-DkT"/>
                 <constraint firstItem="8le-s4-WZ0" firstAttribute="trailing" secondItem="qxt-vF-4Na" secondAttribute="trailing" constant="25" id="YM6-1s-APU"/>
+                <constraint firstItem="WFW-xO-SQS" firstAttribute="top" secondItem="8le-s4-WZ0" secondAttribute="top" constant="70" id="aa7-PW-cce"/>
                 <constraint firstItem="V72-bh-nuv" firstAttribute="leading" secondItem="8le-s4-WZ0" secondAttribute="leading" id="bSf-ap-Jyy"/>
                 <constraint firstItem="8le-s4-WZ0" firstAttribute="bottom" secondItem="V72-bh-nuv" secondAttribute="bottom" constant="5" id="kEz-0b-7ob"/>
                 <constraint firstItem="8le-s4-WZ0" firstAttribute="bottom" secondItem="qxt-vF-4Na" secondAttribute="bottom" constant="25" id="sx2-Hy-5ZV"/>
@@ -58,6 +69,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
