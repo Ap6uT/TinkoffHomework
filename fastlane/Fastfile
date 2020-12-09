@@ -1,0 +1,34 @@
+
+  setup_travis
+  
+  desc "Build for test"
+  lane :build_for_testing do
+	  scan(
+      clean: true
+    )
+
+    webhook_url = ENV['DISCORD_WEBHOOK_URL']
+
+    discord(
+      message: 'it's alive',
+      webhook_url: webhook_url
+    )
+  end
+
+  lane :run_my_tests do
+    run_tests(workspace: "TinkoffHomework.xcworkspace",
+      device: "iPhone X",
+      scheme: "TinkoffHomeworkTests")
+
+    run_tests(workspace: "TinkoffHomework.xcworkspace",
+      device: "iPhone X",
+      scheme: "SavingTests")
+
+    run_tests(workspace: "TinkoffHomework.xcworkspace",
+      device: "iPhone X",
+      scheme: "TinkoffHomeworkTests")
+  end
+
+  lane :build_and_test do
+	
+  end

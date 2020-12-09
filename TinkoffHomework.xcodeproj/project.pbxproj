@@ -202,6 +202,7 @@
 		D4AEEAD22576E01900B5EDA1 /* SavingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTests.swift; sourceTree = "<group>"; };
 		D4AEEAD42576E01900B5EDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4AEEAF22576E10500B5EDA1 /* ChatMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMock.swift; sourceTree = "<group>"; };
+		D4B0BB94258160660046BAFC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D4B6C4202559F3FD0013AC92 /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
 		D4B7FED4252B11A800832202 /* StyleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StyleView.xib; sourceTree = "<group>"; };
 		D4B7FED7252B1DF900832202 /* StyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleView.swift; sourceTree = "<group>"; };
@@ -522,14 +523,15 @@
 			isa = PBXGroup;
 			children = (
 				D4AC709C253C74DE003F07A1 /* GoogleService-Info.plist */,
-				D4684C9C255C191800BC5407 /* RootAssembly.swift */,
 				D468D913250EDA3D00D3D7B8 /* Info.plist */,
 				D468D905250EDA3C00D3D7B8 /* AppDelegate.swift */,
+				D4684C9C255C191800BC5407 /* RootAssembly.swift */,
+				D4B0BB94258160660046BAFC /* Config.xcconfig */,
 				D459DDAD2559DD7B00478D19 /* 1. Presentation Layer */,
 				D4B6C41D2559F2300013AC92 /* 2. Service Layer */,
 				D45BD302255B0CE400F1AEE1 /* 3. Core Layer */,
-				D45602202524747B002AE0BF /* Some Global Functions */,
 				D456021F25247459002AE0BF /* Resources */,
+				D45602202524747B002AE0BF /* Some Global Functions */,
 			);
 			path = TinkoffHomework;
 			sourceTree = "<group>";
@@ -1070,6 +1072,7 @@
 		};
 		D468D914250EDA3D00D3D7B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4B0BB94258160660046BAFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1130,6 +1133,7 @@
 		};
 		D468D915250EDA3D00D3D7B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4B0BB94258160660046BAFC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

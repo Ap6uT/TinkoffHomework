@@ -8,4 +8,5 @@
 
 import Foundation
 
-let tokenRestAPI: String = "19121013-764ffce0625796af2e2870e18"
+let tokenRestAPI: String = Bundle.main.object(forInfoDictionaryKey: "token") as? String ?? "hhh"
+//"19121013-764ffce0625796af2e2870e18"

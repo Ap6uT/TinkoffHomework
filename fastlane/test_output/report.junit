@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='TinkoffHomeworkUITests.xctest' tests='3' failures='0'>
+  <testsuite name='TinkoffHomeworkTests.TinkoffHomeworkTests' tests='1' failures='0'>
+    <testcase classname='TinkoffHomeworkTests.TinkoffHomeworkTests' name='testExample' time='0.002'/>
+  </testsuite>
+  <testsuite name='SavingTests.SavingTests' tests='1' failures='0'>
+    <testcase classname='SavingTests.SavingTests' name='testExample' time='0.002'/>
+  </testsuite>
+  <testsuite name='TinkoffHomeworkUITests.TinkoffHomeworkUITests' tests='1' failures='0'>
+    <testcase classname='TinkoffHomeworkUITests.TinkoffHomeworkUITests' name='testExample' time='5.551'/>
+  </testsuite>
+</testsuites>

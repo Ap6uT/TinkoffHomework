@@ -34,7 +34,7 @@ class Rest: IRest {
     private let urlSession = URLSession(configuration: .default)
     
     private enum API {
-         static let baseURL = "https://pixabay.com/api/"
+         static let baseURL = Bundle.main.object(forInfoDictionaryKey: "restURL") as? String ?? ""
      }
     
     static func shared() -> IRest {

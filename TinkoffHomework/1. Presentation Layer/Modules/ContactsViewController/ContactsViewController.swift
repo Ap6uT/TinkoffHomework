@@ -36,7 +36,6 @@ class ContactsViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         theme = model.getTheme()
         model.applyTheme(theme)
 

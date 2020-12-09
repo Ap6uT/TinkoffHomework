@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  TinkoffHomework
+//
+//  Created by Alexander Grishin on 09.12.2020.
+//  Copyright © 2020 Alexander Grishin. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+REST_TOKEN = '19121013-764ffce0625796af2e2870e18'
+REST_URL = 'https://pixabay.com/api/'
